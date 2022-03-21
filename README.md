@@ -15,7 +15,7 @@ PacletInstall["https://github.com/KirillBelovTest/WebSocketJLink/releases/downlo
 Import the package
 
 ```wolfram
-<<WebSocketJLink`
+Get["WebSocketJLink`"]
 ```
 
 Create a new connection
