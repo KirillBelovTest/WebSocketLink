@@ -7,7 +7,8 @@ Adds the ability to work with web sockets in Wolfram using [Java-WebSocket](http
 ## Installation
 
 ```wolfram
-PacletInstall["https://github.com/KirillBelovTest/WebSocketJLink/releases/download/release/WebSocketJLink-0.1.0.paclet"]
+PacletSiteRegister["https://github.com/KirillBelovTest/WebSocketJLink/releases/download/release/"]
+PacletInstall["WebSocketJLink"]
 ```
 
 ## Using
