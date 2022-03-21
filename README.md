@@ -2,7 +2,7 @@
 
 ## About 
 
-Adds the ability to work with web sockets in Wolfram using Java-WebSocket
+Adds the ability to work with web sockets in Wolfram using [Java-WebSocket](https://github.com/TooTallNate/Java-WebSocket)
 
 ## Installation
 
