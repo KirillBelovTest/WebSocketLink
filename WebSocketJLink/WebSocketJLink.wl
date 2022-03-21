@@ -23,14 +23,22 @@ WebSocketPing::usage =
 "WebSocketPing[connection]"
 
 
+WebSocketConnections::usage = 
+"WebSocketConnections[]"
+
+
 Begin["`Private`"]
+
+
+$connections = <||>
 
 
 $directory = DirectoryName[$InputFileName]
 
 
 javaInit[] := (
-	ReinstallJava[];
+	InstallJava[]; 
+	ReinstallJava[]; 
 	AddToClasspath[FileNameJoin[{$directory, "Java"}]]; 
 	Apply[AddToClasspath] @ FileNames["*.jar", {FileNameJoin[{$directory, "Java"}]}]; 
 )
@@ -51,6 +59,7 @@ expr
 
 
 connectionPattern[] := <|
+	"UUID" -> _, 
 	"Socket" -> _, 
 	"Listener" -> _, 
 	"Client" -> _, 
@@ -85,6 +94,15 @@ Module[{$bytes = assoc["DataByteArray"], $length, $currentLength, $completedData
 ]
 
 
+SyntaxInformation[WebSocketConnections] = {
+	"ArgumentsPattern" -> {}
+}
+
+
+WebSocketConnections[] := 
+Values[$connections]
+
+
 Options[WebSocketConnect] = {
 	"EventHandler" -> defaultEventHandler, 
 	"Deserializer" -> defaultDeserializer
@@ -98,8 +116,9 @@ SyntaxInformation[WebSocketConnect] = {
 
 
 WebSocketConnect[url_String, OptionsPattern[]] := 
-Module[{socket, listener, client, buffer, data, port, deserializer, eventHandler}, 
+Module[{uuid, socket, listener, client, buffer, data, port, deserializer, eventHandler}, 
 	javaInit[]; 
+	uuid = CreateUUID["WebSocketConnection-"]; 
 	data = CreateDataStructure["DynamicArray"]; 
 	buffer = CreateDataStructure["DynamicArray"]; 
 	deserializer = OptionValue["Deserializer"]; 
@@ -110,7 +129,8 @@ Module[{socket, listener, client, buffer, data, port, deserializer, eventHandler
 	client = JavaNew["websocketjlink.WebSocketJLinkClient", url, port]; 
 	Block[{connect}, client@connect[]]; 
 	
-	<|
+	$connections[uuid] = <|
+		"UUID" -> uuid, 
 		"Socket" -> socket, 
 		"Listener" -> listener, 
 		"Client" -> client, 
@@ -140,8 +160,14 @@ Module[{serializer,jclient = connection["Client"], frameString},
 ]
 
 
+SyntaxInformation[WebSocketClose] = {
+	"ArgumentsPattern" -> {_}
+}
+
+
 WebSocketClose[connection: connectionPattern[]] := 
 Module[{jclient, jsocket}, 
+	KeyDropFrom[$connections, connection["UUID"]]; 
 	DeleteObject[connection["Listener"]]; 
 	Close[connection["Socket"]]; 
 	Block[{redirectSocket}, jsocket = jclient@redirectSocket]; 
@@ -149,6 +175,11 @@ Module[{jclient, jsocket},
 	Block[{close}, jclient@close[]]; 
 	Return[connection]
 ]
+
+
+SyntaxInformation[WebSocketPing] = {
+	"ArgumentsPattern" -> {_}
+}
 
 
 WebSocketPing[connection: connectionPattern[]] := 
