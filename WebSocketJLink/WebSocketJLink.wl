@@ -1,10 +1,13 @@
 (* ::Package:: *)
 
-
 BeginPackage["WebSocketJLink`", {"JLink`"}]
 
 
 ClearAll["`*"]
+
+
+WebSocketConnectionObject::usage = 
+"WebSocketConnectionObject[assoc]"
 
 
 WebSocketConnect::usage = 
@@ -36,12 +39,14 @@ $connections = <||>
 $directory = DirectoryName[$InputFileName]
 
 
-javaInit[] := (
+javaInit[] := javaInit[] = 
+Module[{$jlink}, 
 	InstallJava[]; 
-	ReinstallJava[]; 
-	AddToClasspath[FileNameJoin[{$directory, "Java"}]]; 
-	Apply[AddToClasspath] @ FileNames["*.jar", {FileNameJoin[{$directory, "Java"}]}]; 
-)
+	$jlink = ReinstallJava[]; 
+	AddToClassPath[FileNameJoin[{$directory, "Java"}]]; 
+	Apply[AddToClassPath] @ FileNames["*.jar", {FileNameJoin[{$directory, "Java"}]}]; 
+	$jlink
+]
 
 
 defaultEventHandler[message_] := (
@@ -56,16 +61,6 @@ data
 
 defaultSerializer[expr_] := 
 expr
-
-
-connectionPattern[] := <|
-	"UUID" -> _, 
-	"Socket" -> _, 
-	"Listener" -> _, 
-	"Client" -> _, 
-	"Buffer" -> _, 
-	"Data" -> _
-|>
 
 
 messageListener[buffer_, data_, deserializer_, eventHandler_][assoc_?AssociationQ] := 
@@ -92,6 +87,41 @@ Module[{$bytes = assoc["DataByteArray"], $length, $currentLength, $completedData
 		]; 
 	]; 
 ]
+
+
+SyntaxInformation[WebSocketConnectionObject] = {
+	"ArgumentsPattern" -> {_}
+}
+
+
+WebSocketConnectionObject[assoc_?AssociationQ][] := 
+assoc
+
+
+WebSocketConnectionObject[assoc_?AssociationQ][key_String] /; 
+KeyExistsQ[assoc, key] := 
+assoc[key]
+
+
+WebSocketConnectionObject /: 
+MakeBoxes[connection_WebSocketConnectionObject, form: StandardForm | OutputForm] := (
+	BoxForm`ArrangeSummaryBox[
+		WebSocketConnectionObject, 
+		connection, 
+		Null, 
+		{
+			{BoxForm`SummaryItem[{"UUID:    ", connection["UUID"]}], SpanFromLeft}, 
+			{BoxForm`SummaryItem[{"Data:    ", ToString[connection["Data"]["Length"]] <> " messages received"}], SpanFromLeft}
+		}, {
+			{BoxForm`SummaryItem[{"Socket:  ", connection["Socket"]}], SpanFromLeft}, 
+			{BoxForm`SummaryItem[{"Listener:", connection["Listener"]}], SpanFromLeft}, 
+			{BoxForm`SummaryItem[{"Client:  ", connection["Client"]}], SpanFromLeft}, 
+			{BoxForm`SummaryItem[{"Buffer:  ", connection["Buffer"]}], SpanFromLeft}, 
+			{BoxForm`SummaryItem[{"Data:    ", connection["Data"]}], SpanFromLeft}
+		}, 
+		form
+	]
+)
 
 
 SyntaxInformation[WebSocketConnections] = {
@@ -129,14 +159,14 @@ Module[{uuid, socket, listener, client, buffer, data, port, deserializer, eventH
 	client = JavaNew["websocketjlink.WebSocketJLinkClient", url, port]; 
 	Block[{connect}, client@connect[]]; 
 	
-	$connections[uuid] = <|
+	$connections[uuid] = WebSocketConnectionObject[<|
 		"UUID" -> uuid, 
 		"Socket" -> socket, 
 		"Listener" -> listener, 
 		"Client" -> client, 
 		"Buffer" -> buffer, 
 		"Data" -> data
-	|>
+	|>]
 ]
 
 
@@ -151,7 +181,7 @@ SyntaxInformation[WebSocketSend] = {
 }
 
 
-WebSocketSend[connection: connectionPattern[], frame_, OptionsPattern[]] := 
+WebSocketSend[connection_WebSocketConnectionObject, frame_, OptionsPattern[]] := 
 Module[{serializer,jclient = connection["Client"], frameString}, 
 	serializer = OptionValue["Serializer"];
 	frameString = serializer[frame];  
@@ -165,7 +195,7 @@ SyntaxInformation[WebSocketClose] = {
 }
 
 
-WebSocketClose[connection: connectionPattern[]] := 
+WebSocketClose[connection_WebSocketConnectionObject] := 
 Module[{jclient, jsocket}, 
 	KeyDropFrom[$connections, connection["UUID"]]; 
 	DeleteObject[connection["Listener"]]; 
@@ -182,7 +212,7 @@ SyntaxInformation[WebSocketPing] = {
 }
 
 
-WebSocketPing[connection: connectionPattern[]] := 
+WebSocketPing[connection_WebSocketConnectionObject] := 
 Module[{jclient = connection["Client"]}, 
 	Block[{sendPing}, jclient@sendPing[]]; 
 	Return[connection]
