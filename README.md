@@ -24,7 +24,7 @@ Create a new connection
 connection1 = WebSocketConnect["wss://stream.binance.com:9443/ws/btcusdt@miniTicker"]
 ```
 >```wolfram
-> Out[..] := WebSocketConnectionObject[<>]
+> WebSocketConnectionObject[<>]
 > ```
 
 After serveral seconds you can view received data
