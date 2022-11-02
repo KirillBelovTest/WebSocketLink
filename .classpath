@@ -8,5 +8,6 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="WebSocketJLink/Java/Java-WebSocket-1.5.2.jar"/>
 	<classpathentry kind="lib" path="WebSocketJLink/Java/slf4j-api-1.7.25.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Kirill/Projects/WebSocketJLink/WebSocketJLink/Java/slf4j-simple-1.7.25.jar"/>
 	<classpathentry kind="output" path="javaOutput"/>
 </classpath>

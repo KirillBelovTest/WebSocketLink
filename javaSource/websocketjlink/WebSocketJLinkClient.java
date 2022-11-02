@@ -53,7 +53,12 @@ public class WebSocketJLinkClient extends WebSocketClient {
 
 	@Override
 	public void onClose(int arg0, String arg1, boolean arg2) {
-		
+		super.close();
+		try {
+			redirectSocket.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override
@@ -68,10 +73,14 @@ public class WebSocketJLinkClient extends WebSocketClient {
 			DataOutputStream out = new DataOutputStream(outToServer);
 			byte[] data = message.getBytes("UTF8"); 
 			byte[] length = ByteBuffer.allocate(4).putInt(data.length).array(); 
-			ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+			ByteArrayOutputStream outputStream = new ByteArrayOutputStream();			
+			System.out.println("length: " + data.length);
+			System.out.println(message);
+			System.out.println();
 			outputStream.write(length);
 			outputStream.write(data);
 			out.write(outputStream.toByteArray());
+			System.out.println(message);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

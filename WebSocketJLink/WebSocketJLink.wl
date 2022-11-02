@@ -1,6 +1,6 @@
 (* ::Package:: *)
 
-BeginPackage["WebSocketJLink`", {"JLink`"}]
+BeginPackage["KirillBelov`WebSocketJLink`", {"JLink`"}]
 
 
 ClearAll["`*"]
@@ -64,28 +64,23 @@ expr
 
 
 messageListener[buffer_, data_, deserializer_, eventHandler_][assoc_?AssociationQ] := 
-Module[{$bytes = assoc["DataByteArray"], $length, $currentLength, $completedData, $message, $messageString}, 
-	If[buffer["Length"] == 0, 
-		$length = FromDigits[Normal[$bytes[[1 ;; 4]]], 256]; 
-		If[$length === Length[$bytes] + 1, 
-			data["Append", eventHandler[$bytes[[5 ;; ]]]], 
-			buffer["Append", $bytes]
-		], 
-		buffer["Append", $bytes]; 
-		$length = FromDigits[Normal[buffer["Part", 1][[1 ;; 4]]], 256]; 
-		$currentLength = buffer["Fold", #1 + Length[#2]&, -4]; 
-		If[$currentLength >= $length, 
-			$completedData = Apply[Join, buffer["Elements"]][[5 ;; $length + 4]]; 
-			$messageString = ByteArrayToString[$completedData];
-			$message = deserializer[$messageString]; 
-			data["Append", $message]; 
-			eventHandler[$message]; 
-			buffer["DropAll"]; 
-			If[$currentLength > $length, 
-				buffer["Append", $bytes[[$length - $currentLength ;; ]]]
-			]
-		]; 
-	]; 
+Module[{$bytes = assoc["DataByteArray"], $currentBufferLength, $frameLength, $data, $frame, $rest, $message}, 
+	 buffer["Append", $bytes]; 
+	 $currentBufferLength = buffer["Fold", #1 + Length[#2]&, 0]; 
+	 $frameLength = FromDigits[Normal[buffer["Part", 1][[1 ;; 4]]], 256]; 
+	 If[
+	 	$frameLength <= $currentBufferLength - 4, 
+	 		$data = buffer["Fold", Join, {}]; 
+	 		$frame = ByteArrayToString[ByteArray[$data[[5 ;; $frameLength + 4]]]]; 
+	 		buffer["DropAll"]; 
+	 		If[$frameLength < $currentBufferLength - 4, 
+	 			$rest = $data[[$frameLength + 5 ;; ]]; 
+	 			buffer["Append", $rest]; 
+	 		]; 
+	 		$message = deserializer[$frame]; 
+	 		data["Append", $message]; 
+	 		eventHandler[$message]; 
+	 ]; 
 ]
 
 
@@ -158,6 +153,7 @@ Module[{uuid, socket, listener, client, buffer, data, port, deserializer, eventH
 	port = socket["DestinationPort"];
 	client = JavaNew["websocketjlink.WebSocketJLinkClient", url, port]; 
 	Block[{connect}, client@connect[]]; 
+	Block[{isOpen}, While[!client@isOpen[], Pause[0.001]]]; 
 	
 	$connections[uuid] = WebSocketConnectionObject[<|
 		"UUID" -> uuid, 
@@ -182,7 +178,7 @@ SyntaxInformation[WebSocketSend] = {
 
 
 WebSocketSend[connection_WebSocketConnectionObject, frame_, OptionsPattern[]] := 
-Module[{serializer,jclient = connection["Client"], frameString}, 
+Module[{serializer, jclient = connection["Client"], frameString}, 
 	serializer = OptionValue["Serializer"];
 	frameString = serializer[frame];  
 	Block[{send}, jclient@send[frameString]]; 
@@ -196,13 +192,11 @@ SyntaxInformation[WebSocketClose] = {
 
 
 WebSocketClose[connection_WebSocketConnectionObject] := 
-Module[{jclient, jsocket}, 
-	KeyDropFrom[$connections, connection["UUID"]]; 
-	DeleteObject[connection["Listener"]]; 
-	Close[connection["Socket"]]; 
-	Block[{redirectSocket}, jsocket = jclient@redirectSocket]; 
-	Block[{close}, jsocket@close[]]; 
+Module[{jclient = connection["Client"]}, 
 	Block[{close}, jclient@close[]]; 
+	Close[connection["Socket"]]; 
+	DeleteObject[connection["Listener"]];
+	KeyDropFrom[$connections, connection["UUID"]]; 
 	Return[connection]
 ]
 
