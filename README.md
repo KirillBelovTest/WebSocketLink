@@ -12,12 +12,10 @@ First compile java binary files using maven:
 mvn package -f ./pom.xml
 ```
 
-
-
 ## Installation
 
 ```wolfram
-PacletInstall["https://github.com/CryptoLabExperiments/WebSocketJLink/releases/download/v0.1.2/WebSocketLink-0.1.2.paclet"]
+PacletInstall["KirillBelov/WebSocketLink"]
 ```
 
 ## Using
