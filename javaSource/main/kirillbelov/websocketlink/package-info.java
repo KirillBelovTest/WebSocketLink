@@ -5,4 +5,4 @@
  * @author Kirill
  *
  */
-package kirillbelov.websocketjlink;
+package kirillbelov.websocketlink;

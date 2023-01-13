@@ -1,7 +1,7 @@
 /**
  * 
  */
-package kirillbelov.websocketjlink;
+package kirillbelov.websocketlink;
 
 /**
  * @author Kirill Belov
@@ -22,10 +22,10 @@ import org.java_websocket.client.WebSocketClient;
 import org.java_websocket.drafts.Draft;
 import org.java_websocket.handshake.ServerHandshake;
 
-public class WebSocketJLinkClient extends WebSocketClient {
+public class WebSocketLinkClient extends WebSocketClient {
 	
 	public static void main(String[] args) throws UnknownHostException, URISyntaxException, IOException {
-		WebSocketJLinkClient client = new WebSocketJLinkClient("wss://stream.binance.com:9443/ws/btcusdt@miniTicker", 9001);
+		WebSocketLinkClient client = new WebSocketLinkClient("wss://stream.binance.com:9443/ws/btcusdt@miniTicker", 9001);
 		client.connect();
 	}
 	
@@ -33,21 +33,21 @@ public class WebSocketJLinkClient extends WebSocketClient {
 	
 	public Socket redirectSocket;
 
-	public WebSocketJLinkClient(String serverURI, int redirectPort) throws URISyntaxException, UnknownHostException, IOException {
+	public WebSocketLinkClient(String serverURI, int redirectPort) throws URISyntaxException, UnknownHostException, IOException {
 		super(new URI(serverURI));
 		this.redirectPort = redirectPort;
 		this.redirectSocket = new Socket("localhost", this.redirectPort);
 	}
 	
-	public WebSocketJLinkClient(URI serverUri, Draft draft) {
+	public WebSocketLinkClient(URI serverUri, Draft draft) {
 		super(serverUri, draft);
 	}
 
-	public WebSocketJLinkClient(URI serverURI) {
+	public WebSocketLinkClient(URI serverURI) {
 		super(serverURI);
 	}
 
-	public WebSocketJLinkClient(URI serverUri, Map<String, String> httpHeaders) {
+	public WebSocketLinkClient(URI serverUri, Map<String, String> httpHeaders) {
 		super(serverUri, httpHeaders);
 	}
 
