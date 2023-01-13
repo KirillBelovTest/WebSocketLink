@@ -4,10 +4,20 @@
 
 Adds the ability to work with web sockets in Wolfram using [Java-WebSocket](https://github.com/TooTallNate/Java-WebSocket)
 
+## Building
+
+First compile java binary files using maven:
+
+```bash
+mvn package -f ./pom.xml
+```
+
+
+
 ## Installation
 
 ```wolfram
-PacletInstall["https://github.com/CryptoLabExperiments/WebSocketJLink/releases/download/v0.1.2/WebSocketJLink-0.1.2.paclet"]
+PacletInstall["https://github.com/CryptoLabExperiments/WebSocketJLink/releases/download/v0.1.2/WebSocketLink-0.1.2.paclet"]
 ```
 
 ## Using
@@ -15,7 +25,7 @@ PacletInstall["https://github.com/CryptoLabExperiments/WebSocketJLink/releases/d
 Import the package
 
 ```wolfram
-Get["WebSocketJLink`"]
+Get["KirillBelov`WebSocketLink`"]
 ```
 
 Create a new connection
