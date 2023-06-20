@@ -14,8 +14,8 @@ import java.io.OutputStream;
 import java.net.Socket;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.UnknownHostException;
 import java.nio.ByteBuffer;
+import java.nio.charset.StandardCharsets;
 import java.util.Map;
 
 import org.java_websocket.client.WebSocketClient;
@@ -24,7 +24,7 @@ import org.java_websocket.handshake.ServerHandshake;
 
 public class WebSocketLinkClient extends WebSocketClient {
 	
-	public static void main(String[] args) throws UnknownHostException, URISyntaxException, IOException {
+	public static void main(String[] args) throws URISyntaxException, IOException {
 		WebSocketLinkClient client = new WebSocketLinkClient("wss://stream.binance.com:9443/ws/btcusdt@miniTicker", 9001);
 		client.connect();
 	}
@@ -33,7 +33,7 @@ public class WebSocketLinkClient extends WebSocketClient {
 	
 	public Socket redirectSocket;
 
-	public WebSocketLinkClient(String serverURI, int redirectPort) throws URISyntaxException, UnknownHostException, IOException {
+	public WebSocketLinkClient(String serverURI, int redirectPort) throws URISyntaxException, IOException {
 		super(new URI(serverURI));
 		this.redirectPort = redirectPort;
 		this.redirectSocket = new Socket("localhost", this.redirectPort);
@@ -61,26 +61,32 @@ public class WebSocketLinkClient extends WebSocketClient {
 		}
 	}
 
+	/*
+	 * close connection
+	 */
 	@Override
-	public void onError(Exception arg0) { 
-		
+	public void onError(Exception arg0) {
+		try {
+			redirectSocket.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
+	/*
+	 * write message to connection
+	 */
 	@Override
 	public void onMessage(String message) {
 		try {
 			OutputStream outToServer = redirectSocket.getOutputStream();
 			DataOutputStream out = new DataOutputStream(outToServer);
-			byte[] data = message.getBytes("UTF8"); 
+			byte[] data = message.getBytes(StandardCharsets.UTF_8); 
 			byte[] length = ByteBuffer.allocate(4).putInt(data.length).array(); 
 			ByteArrayOutputStream outputStream = new ByteArrayOutputStream();			
-			System.out.println("length: " + data.length);
-			System.out.println(message);
-			System.out.println();
 			outputStream.write(length);
 			outputStream.write(data);
 			out.write(outputStream.toByteArray());
-			System.out.println(message);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

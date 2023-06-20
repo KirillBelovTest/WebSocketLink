@@ -94,17 +94,28 @@ SyntaxInformation[WebSocketConnectionObject] = {
 		"\"Data\"", 
 		"\"EventHandler\"", 
 		"\"Deserializer\"", 
-		"\"Serializer\""
+		"\"Serializer\"", 
+		"\"OpenQ\""
 	}
 }
 
 
-CreateType[WebSocketConnectionObject, {
-	"Icon" -> Import[FileNameJoin[{$directory, "Images", "WebSocketConnectionIcon.png"}]], 
-	"Init" -> Function[connection, AppendTo[$connections, connection["UUID"] -> connection]; connection], 
-	"UUID", "Socket", "Listener", "Client", "Buffer", "Data", 
-	"EventHandler", "Deserializer", "Serializer"
-}]
+CreateType[WebSocketConnectionObject, 
+	Function[connection, AppendTo[$connections, connection["UUID"] -> connection]], 
+	{
+		"Icon",  
+		"UUID", 
+		"Socket", 
+		"Listener", 
+		"Client", 
+		"Buffer", 
+		"Data", 
+		"EventHandler", 
+		"Deserializer", 
+		"Serializer", 
+		"OpenQ" -> False
+	}
+]
 
 
 (* ::Section::Closed:: *)
@@ -195,7 +206,7 @@ connection["EventHandler"] = Delete[connection["EventHandler"], eventHandlerKey]
 Protect[AddTo, SubtractFrom]
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*Connect*)
 
 
@@ -207,7 +218,7 @@ SyntaxInformation[WebSocketConnect] = {
 
 Options[WebSocketConnect] = {
 	"Data" :> CreateDataStructure["DynamicArray"], 
-	"EventHandler" -> Function[{connection, message}, connection["Data"]["Append", message]], 
+	"EventHandler" -> <|"Append" -> Function[{connection, message}, connection["Data"]["Append", message]]|>, 
 	"Deserializer" -> Function[message, message], 
 	"Serializer" -> Function[message, message]
 }
@@ -226,7 +237,8 @@ Module[{connection},
 		"Deserializer" -> OptionValue["Deserializer"], 
 		"EventHandler" -> OptionValue["EventHandler"], 
 		"Buffer" -> CreateDataStructure["DynamicArray"], 
-		"Data" -> OptionValue["Data"]
+		"Data" -> OptionValue["Data"], 
+		"Icon" -> Import[FileNameJoin[{$directory, "Images", "WebSocketConnectionIcon.png"}]]
 	]; 
 	
 	connection["Listener"] = SocketListen[Automatic, messageListener[connection["UUID"]]]; 
@@ -235,8 +247,9 @@ Module[{connection},
 	connection["Client"] = JavaNew["kirillbelov.websocketlink.WebSocketLinkClient", url, connection["Port"]]; 
 	Block[{connect}, connection["Client"]@connect[]]; 
 	Block[{isOpen}, TimeConstrained[While[!connection["Client"]@isOpen[], Pause[0.001]], 5, 
-		Message[WebSocketConnect::notopened]]
+		Message[WebSocketConnect::notopened]]; 
 	]; 
+	With[{conn = connection}, connection["IsOpen"] := Block[{isOpen}, conn["Client"]@isOpen[]]]; 
 	
 	Return[connection]
 ]
