@@ -10,9 +10,8 @@
 
 BeginPackage["KirillBelov`WebSocketLink`", {
 	"JLink`", 
-	"KirillBelov`Internal`", 
 	"KirillBelov`Objects`", 
-	"KirillBelov`CSockets`"
+	"KirillBelov`CSockets`TCP`"
 }]; 
 
 
@@ -75,7 +74,8 @@ CreateType[WebSocketConnectionObject,
 		"Listener", 
 		"Client", 
 		"Data", 
-		"Handler"
+		"Handler", 
+		"HTTPHeaders"
 	}
 ]; 
 
@@ -98,11 +98,11 @@ Values[$connections];
 
 
 WebSocketConnect::notopened = 
-"Connection not opened on url = `1`"
+"Connection not opened on url = `1`"; 
 
 
 WebSocketConnect[url_String, opts: OptionsPattern[{WebSocketConnectionObject}]] := 
-Module[{connection}, 
+Module[{connection, httpHeaders}, 
 	javaInit[];
 	connection = WebSocketConnectionObject[opts]; 
 	handler = CSocketHandler[]; 
@@ -110,10 +110,18 @@ Module[{connection},
 	handler["DefaultHandler"] = onMessage[connection]; 
 	handler["Deserializer"] = Function[#[[9 ;; ]]]; 
 
-	connection["Socket"] = CSocketOpen[RandomInteger[{20000, 60000}]]; 
+	connection["Socket"] = Echo@CSocketOpen["localhost", RandomInteger[{20000, 60000}]]; 
 	connection["Port"] = connection["Socket"]["DestinationPort"]; 
 	connection["Listener"] = SocketListen[connection["Socket"], handler]; 
-	connection["Client"] = JavaNew["kirillbelov.websocketlink.WebSocketLinkClient", url, "localhost", connection["Port"]]; 
+	
+	If[AssociationQ[OptionValue["HTTPHeaders"]], 
+		httpHeaders = JavaNew["java.util.HashMap"]; 
+		Block[{put}, KeyValueMap[httpHeaders@put[MakeJavaObject@ToString[#1], MakeJavaObject@ToString[#2]]&, OptionValue["HTTPHeaders"]]]; 
+		connection["Client"] = JavaNew["kirillbelov.websocketlink.WebSocketLinkClient", url, "localhost", connection["Port"], httpHeaders]; , 
+	(*Else*)
+		connection["Client"] = JavaNew["kirillbelov.websocketlink.WebSocketLinkClient", url, "localhost", connection["Port"]]
+	];
+	
 	connection["Deserializer"] = Function[ImportByteArray[#, "RawJSON"]]; 
 	connection["Data"] = CreateDataStructure["DynamicArray"]; 
 	connection["Handler"] = <|
