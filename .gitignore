@@ -1,4 +1,5 @@
 /.vscdode
+/.consulo
 /build
 /javaOutput
 docbuild.xml

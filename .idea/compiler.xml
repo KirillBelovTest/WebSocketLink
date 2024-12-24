@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Annotation profile for Test" enabled="true">
+        <sourceOutputDir name="javaOutput/generated-sources/annotations" />
+        <sourceTestOutputDir name="javaOutput/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="WebSocketLink" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

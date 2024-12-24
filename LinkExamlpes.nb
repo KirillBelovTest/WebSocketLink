@@ -1,0 +1,140 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 14.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4385,        132]
+NotebookOptionsPosition[      3838,        116]
+NotebookOutlinePosition[      4246,        132]
+CellTagsIndexPosition[      4203,        129]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{"<<", "KirillBelov`Objects`"}], "\n", 
+ RowBox[{"<<", "KirillBelov`Internal`"}], "\n", 
+ RowBox[{"<<", "KirillBelov`CSockets`"}], "\n", 
+ RowBox[{"<<", "KirillBelov`TCPServer`"}], "\n", 
+ RowBox[{"<<", "KirillBelov`WebSocketHandler`"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"serverSocket", " ", "=", " ", 
+    RowBox[{"CSocketOpen", "[", "8000", "]"}]}], ";"}], " "}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"listener", " ", "=", " ", 
+    RowBox[{"SocketListen", "[", 
+     RowBox[{"serverSocket", ",", " ", 
+      RowBox[{
+       RowBox[{"tcp", "@", "#"}], "&"}]}], "]"}]}], ";"}], " "}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"tcp", " ", "=", " ", 
+    RowBox[{"TCPServer", "[", "]"}]}], ";"}], " "}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"tcp", "[", 
+     RowBox[{"\"\<CompleteHandler\>\"", ",", " ", "\"\<WebSocket\>\""}], 
+     "]"}], " ", "=", " ", 
+    RowBox[{"WebSocketPacketQ", " ", "->", " ", "WebSocketPacketLength"}]}], 
+   ";"}], " "}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"tcp", "[", 
+     RowBox[{"\"\<MessageHandler\>\"", ",", " ", "\"\<WebSocket\>\""}], "]"}],
+     " ", "=", " ", 
+    RowBox[{"WebSocketPacketQ", " ", "->", " ", "ws"}]}], ";"}], " "}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"ws", " ", "=", " ", 
+    RowBox[{"WebSocketHandler", "[", "]"}]}], ";"}], " "}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"ws", "[", 
+     RowBox[{"\"\<MessageHandler\>\"", ",", " ", "\"\<Echo\>\""}], "]"}], " ",
+     "=", " ", 
+    RowBox[{
+     RowBox[{"Function", "[", "True", "]"}], " ", "->", " ", 
+     RowBox[{"Function", "[", 
+      RowBox[{"Echo", "[", 
+       RowBox[{"#2", ",", " ", "\"\<Received\>\""}], "]"}], "]"}]}]}], ";"}], 
+  " "}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"client", " ", "=", " ", 
+    RowBox[{"CSocketConnect", "[", "8000", "]"}]}], ";"}], 
+  " "}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"WriteString", "[", 
+    RowBox[{
+    "client", ",", " ", 
+     "\"\<GET / HTTP/1.1\nHost: example.com:8000\nUpgrade: websocket\n\
+Connection: Upgrade\nSec-WebSocket-Key: dGhlIHNhbXBsZSBub25jZQ==\n\
+Sec-WebSocket-Version: 13\\r\\n\\r\\n\>\""}], "]"}], ";"}], 
+  " "}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Pause", "[", "0.01", "]"}], ";"}], " "}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"ByteArrayToString", "@", 
+    RowBox[{"SocketReadMessage", "[", "client", "]"}]}], ";"}], 
+  " "}]}], "Input",
+ CellChangeTimes->{{3.9187079607606125`*^9, 3.9187079670528297`*^9}, 
+   3.918709210885229*^9, {3.918711996155491*^9, 3.9187120676514225`*^9}, {
+   3.91871655570973*^9, 3.918716560668911*^9}, {3.918718684722645*^9, 
+   3.918718687823576*^9}},ExpressionUUID->"992203e5-f473-dd4f-ab3e-\
+40a23ee8e399"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"frame", " ", "=", " ", 
+    RowBox[{
+    "KirillBelov`WebSocketHandler`Private`encodeFrame", "[", "\"\<[]\>\"", 
+     "]"}]}], ";"}], " "}]], "Input",
+ CellLabel->"In[21]:=",ExpressionUUID->"83284bd5-ef95-7e45-bddd-017bce404dd8"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"BinaryWrite", "[", 
+    RowBox[{"client", ",", " ", "frame"}], "]"}], ";"}], " "}]], "Input",
+ CellLabel->"In[22]:=",ExpressionUUID->"b9c4534f-9927-734d-95f3-1d2cf49a2834"]
+},
+WindowSize->{893.25, 794.25},
+WindowMargins->{{Automatic, 3}, {Automatic, 4.5}},
+FrontEndVersion->"14.0 for Microsoft Windows (64-bit) (December 12, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"58abb9ef-6f80-914d-81f5-1e7a4de30a4c"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 2775, 78, 368, "Input",ExpressionUUID->"992203e5-f473-dd4f-ab3e-40a23ee8e399"],
+Cell[3336, 100, 276, 7, 25, "Input",ExpressionUUID->"83284bd5-ef95-7e45-bddd-017bce404dd8"],
+Cell[3615, 109, 219, 5, 25, "Input",ExpressionUUID->"b9c4534f-9927-734d-95f3-1d2cf49a2834"]
+}
+]
+*)
+

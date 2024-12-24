@@ -7,7 +7,7 @@ PacletObject[
     "Creator" -> "Kirill Belov",
     "License" -> "MIT",
     "PublisherID" -> "KirillBelov",
-    "Version" -> "1.0.2",
+    "Version" -> "1.0.3",
     "WolframVersion" -> "13+",
     "Dependencies" -> {"KirillBelov/Objects" -> ">=1.0.5"},
     "Extensions" -> {
