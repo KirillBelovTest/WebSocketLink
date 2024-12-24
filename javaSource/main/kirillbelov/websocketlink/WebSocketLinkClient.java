@@ -16,7 +16,8 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
-import java.util.Map;
+import java.util.HashMap;
+import java.util.Map; 
 
 import org.java_websocket.client.WebSocketClient;
 import org.java_websocket.drafts.Draft;
@@ -39,6 +40,15 @@ public class WebSocketLinkClient extends WebSocketClient {
 		this.redirectHost = redirectHost;
 		this.redirectPort = redirectPort;
 		this.redirectSocket = new Socket(this.redirectHost, this.redirectPort);
+	}
+
+	public WebSocketLinkClient(String serverURI, int redirectPort, String cookie, String csrfToken) throws URISyntaxException, IOException {
+		super(new URI(serverURI), new HashMap<String, String>() {{
+			put("Cookie", cookie);
+			put("csrf_token", csrfToken);
+		}});
+		this.redirectPort = redirectPort;
+		this.redirectSocket = new Socket("localhost", this.redirectPort);
 	}
 	
 	public WebSocketLinkClient(URI serverUri, Draft draft) {
