@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>kirillbelov.websocketlink</groupId>
   <artifactId>WebSocketLink</artifactId>
-  <version>1.0.4</version>
+  <version>1.0.5</version>
   <name>Test</name>
   <properties>
     <slf4j-simple-version>LATEST</slf4j-simple-version>
