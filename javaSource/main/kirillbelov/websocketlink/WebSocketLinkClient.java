@@ -1,21 +1,8 @@
-/**
- * 
- */
 package kirillbelov.websocketlink;
 
-/*
-  @author Kirill Belov
-  
- */
-import java.io.ByteArrayOutputStream;
-import java.io.DataOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
-import java.net.Socket;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.nio.ByteBuffer;
-import java.nio.charset.StandardCharsets;
 import java.util.Map; 
 
 import org.java_websocket.client.WebSocketClient;
@@ -30,22 +17,16 @@ public class WebSocketLinkClient extends WebSocketClient {
 	
 	public String redirectHost;
 
-	public int redirectPort;
-	
-	public Socket redirectSocket;
+	public LTPClient ltpClient;
 
 	public WebSocketLinkClient(String serverURI, String redirectHost, int redirectPort) throws URISyntaxException, IOException {
 		super(new URI(serverURI));
-		this.redirectHost = redirectHost;
-		this.redirectPort = redirectPort;
-		this.redirectSocket = new Socket(this.redirectHost, this.redirectPort);
+		this.ltpClient = new LTPClient(redirectHost, redirectPort);
 	}
 
 	public WebSocketLinkClient(String serverURI, String redirectHost, int redirectPort, Map<String, String> httpHeaders) throws URISyntaxException, IOException {
 		super(new URI(serverURI), httpHeaders);
-		this.redirectHost = redirectHost;
-		this.redirectPort = redirectPort;
-		this.redirectSocket = new Socket("localhost", this.redirectPort);
+		this.ltpClient = new LTPClient(redirectHost, redirectPort);
 	}
 	
 	public WebSocketLinkClient(URI serverUri, Draft draft) {
@@ -64,40 +45,27 @@ public class WebSocketLinkClient extends WebSocketClient {
 	public void onClose(int arg0, String arg1, boolean arg2) {
 		super.close();
 		try {
-			redirectSocket.close();
+			ltpClient.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
-	/*
-	 * close connection
-	 */
 	@Override
 	public void onError(Exception arg0) {
+		super.close();
 		try {
-			redirectSocket.close();
+			ltpClient.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
-	/*
-	 * write message to connection
-	 */
 	@Override
 	public void onMessage(String message) {
 		try {
-			OutputStream outToServer = redirectSocket.getOutputStream();
-			DataOutputStream out = new DataOutputStream(outToServer);
-			byte[] sign = "LTP#".getBytes(StandardCharsets.UTF_8);
-			byte[] data = message.getBytes(StandardCharsets.UTF_8);
-			byte[] length = ByteBuffer.allocate(4).putInt(data.length).array();
-			ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-			outputStream.write(sign);
-			outputStream.write(length);
-			outputStream.write(data);
-			out.write(outputStream.toByteArray());
+			System.out.println("onMessage: " + message);
+			ltpClient.send(message);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -105,6 +73,6 @@ public class WebSocketLinkClient extends WebSocketClient {
 
 	@Override
 	public void onOpen(ServerHandshake arg0) {
-		System.out.println("new connection");
+		
 	}
 }

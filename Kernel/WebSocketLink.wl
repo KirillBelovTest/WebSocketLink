@@ -11,7 +11,8 @@
 BeginPackage["KirillBelov`WebSocketLink`", {
 	"JLink`", 
 	"KirillBelov`Objects`", 
-	"KirillBelov`CSockets`TCP`"
+	"KirillBelov`CSockets`TCP`", 
+	"KirillBelov`CSockets`Handler`"
 }]; 
 
 
@@ -110,7 +111,7 @@ Module[{connection, httpHeaders},
 	handler["DefaultHandler"] = onMessage[connection]; 
 	handler["Deserializer"] = Function[#[[9 ;; ]]]; 
 
-	connection["Socket"] = Echo@CSocketOpen["localhost", RandomInteger[{20000, 60000}]]; 
+	connection["Socket"] = CSocketOpen["localhost", RandomInteger[{20000, 60000}]]; 
 	connection["Port"] = connection["Socket"]["DestinationPort"]; 
 	connection["Listener"] = SocketListen[connection["Socket"], handler]; 
 	
