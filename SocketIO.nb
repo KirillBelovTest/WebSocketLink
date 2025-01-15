@@ -1,0 +1,235 @@
+(* Content-type: application/vnd.wolfram.cdf.text *)
+
+(*** Wolfram CDF File ***)
+(* http://www.wolfram.com/cdf *)
+
+(* CreatedBy='Wolfram 14.1' *)
+
+(*************************************************************************)
+(*                                                                       *)
+(*                                                                       *)
+(*  This file was created under the Wolfram Enterprise licensing terms.  *)
+(*                                                                       *)
+(*       For additional information concerning CDF licensing see:        *)
+(*                                                                       *)
+(*        www.wolfram.com/cdf/adopting-cdf/licensing-options.html        *)
+(*                                                                       *)
+(*                                                                       *)
+(*                                                                       *)
+(*************************************************************************)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[      1060,         20]
+NotebookDataLength[      7616,        214]
+NotebookOptionsPosition[      7261,        200]
+NotebookOutlinePosition[      7664,        216]
+CellTagsIndexPosition[      7621,        213]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"$HistoryLength", " ", "=", " ", "0"}], ";"}], " "}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"SetDirectory", "[", 
+    RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ";"}], " "}], "\n", 
+ RowBox[{"<<", "JLink`"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"InstallJava", "[", "]"}], ";"}], " "}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"ReinstallJava", "[", "]"}], ";"}], " "}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"$packages", " ", "=", " ", 
+    RowBox[{"FileNames", "[", 
+     RowBox[{"\"\<*.jar\>\"", ",", " ", 
+      RowBox[{"{", "\"\<Java\>\"", "}"}]}], "]"}]}], ";"}], " "}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"AddToClassPath", " ", "/@", " ", "$packages"}], ";"}], 
+  " "}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"IO", " ", "=", " ", 
+    RowBox[{"LoadJavaClass", "[", 
+     RowBox[{"\"\<io.socket.client.IO\>\"", ",", " ", 
+      RowBox[{"StaticsVisible", "->", "True"}]}], "]"}]}], ";"}], " "}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"IOOptions", " ", "=", " ", 
+    RowBox[{"LoadJavaClass", "[", 
+     RowBox[{"\"\<io.socket.client.IO$Options\>\"", ",", " ", 
+      RowBox[{"StaticsVisible", "->", "True"}]}], "]"}]}], ";"}], " "}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"JavaHashMap", " ", "=", " ", 
+    RowBox[{"LoadJavaClass", "[", 
+     RowBox[{"\"\<java.util.HashMap\>\"", ",", " ", 
+      RowBox[{"StaticsVisible", "->", "True"}]}], "]"}]}], ";"}], " "}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"JavaArrayList", " ", "=", " ", 
+    RowBox[{"LoadJavaClass", "[", 
+     RowBox[{"\"\<java.util.ArrayList\>\"", ",", " ", 
+      RowBox[{"StaticsVisible", "->", "True"}]}], "]"}]}], ";"}], " "}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+   "$endpoint", " ", "=", " ", "\"\<wss://access.ccdb.waexservices.com\>\""}],
+    ";"}], " "}]}], "Code",
+ CellChangeTimes->{{3.9458363450764904`*^9, 3.9458363479712696`*^9}, {
+  3.945917236380392*^9, 3.945917272732479*^9}, {3.9459173223438663`*^9, 
+  3.945917328013027*^9}, {3.945930685896166*^9, 3.94593069409894*^9}},
+ CellLabel->"In[12]:=",ExpressionUUID->"27853cf7-eb1a-4941-a61e-20ae4548b250"],
+
+Cell[BoxData[{
+ RowBox[{"<<", "KirillBelov`WAEXLink`"}], "\n", 
+ RowBox[{
+  RowBox[{"WAEXLogin", "[", "]"}], " ", ":=", " ", 
+  RowBox[{"WAEXLogin", "[", 
+   RowBox[{
+    RowBox[{"SystemCredential", "[", "\"\<WAEX_LOGIN\>\"", "]"}], ",", " ", 
+    RowBox[{"SystemCredential", "[", "\"\<WAEX_PASSWORD\>\"", "]"}]}], 
+   "]"}]}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"csfrToken", " ", "=", " ", 
+    RowBox[{
+     RowBox[{"Once", "[", 
+      RowBox[{"WAEXLogin", "[", "]"}], "]"}], "[", 
+     RowBox[{"\"\<meta\>\"", ",", " ", "\"\<csrfToken\>\""}], "]"}]}], ";"}], 
+  " "}], "\n", 
+ RowBox[{
+  RowBox[{"cookie", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"<|", 
+     RowBox[{"$response", "[", "\"\<Headers\>\"", "]"}], "|>"}], "[", 
+    "\"\<set-cookie\>\"", "]"}]}], ";", " "}]}], "Code",
+ CellChangeTimes->{3.9459322971182537`*^9},
+ CellLabel->"In[76]:=",ExpressionUUID->"2d283345-ec69-d94d-bfd5-fda3dcf6582e"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"opts", " ", "=", " ", 
+    RowBox[{"JavaNew", "[", "IOOptions", "]"}]}], ";"}], " "}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"headers", " ", "=", " ", 
+    RowBox[{"JavaNew", "[", "JavaHashMap", "]"}]}], ";"}], " "}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"opts", "@", "extraHeaders"}], " ", "=", " ", "headers"}], ";"}], 
+  " "}]}], "Code",
+ CellChangeTimes->{{3.945930813399151*^9, 3.9459308225702305`*^9}, {
+  3.9459323063608856`*^9, 3.9459323109299603`*^9}},
+ CellLabel->"In[82]:=",ExpressionUUID->"9e56ab30-c001-0b4b-992f-df14a0c4eeb4"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"headers", "@", 
+    RowBox[{"put", "[", 
+     RowBox[{
+      RowBox[{"MakeJavaObject", "[", "\"\<cookie\>\"", "]"}], ",", " ", 
+      RowBox[{"MakeJavaObject", "[", "cookie", "]"}]}], "]"}]}], ";"}], 
+  " "}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"headers", "@", 
+    RowBox[{"put", "[", 
+     RowBox[{
+      RowBox[{"MakeJavaObject", "[", "\"\<csrf_token\>\"", "]"}], ",", " ", 
+      RowBox[{"MakeJavaObject", "[", "csfrToken", "]"}]}], "]"}]}], ";"}], 
+  " "}]}], "Code",
+ CellChangeTimes->{{3.9459309122016563`*^9, 3.9459309830608063`*^9}, {
+  3.945932321354946*^9, 3.9459323371807766`*^9}},
+ CellLabel->"In[85]:=",ExpressionUUID->"af38e522-4b25-0842-93a1-4a169576f800"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"conn", " ", "=", " ", 
+    RowBox[{"IO`socket", "[", 
+     RowBox[{"$endpoint", ",", " ", "opts"}], "]"}]}], ";"}], " "}]], "Code",
+ CellChangeTimes->{{3.945932261924282*^9, 3.945932267745262*^9}},
+ CellLabel->"In[87]:=",ExpressionUUID->"d8db99a3-e2df-8d48-bd2b-0b4e7716cb57"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"conn", "@", 
+    RowBox[{"connect", "[", "]"}]}], ";"}], " "}]], "Code",
+ CellChangeTimes->{{3.9459323426656265`*^9, 3.9459323479739895`*^9}},
+ CellLabel->"In[88]:=",ExpressionUUID->"9d3e7c4e-fbf1-4744-8461-e6d4ad08f2e7"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"conn", "@", 
+  RowBox[{"isActive", "[", "]"}]}]], "Code",
+ CellChangeTimes->{{3.9459323502404385`*^9, 3.9459323575373287`*^9}},
+ CellLabel->"In[89]:=",ExpressionUUID->"e8da0ed0-9fa2-6f42-8d5b-3bcdb43b81cc"],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.9459323578222294`*^9},
+ CellLabel->"Out[89]=",ExpressionUUID->"3a32af47-362d-0b46-b51c-5549cf762ef9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"conn", "@", 
+  RowBox[{"connected", "[", "]"}]}]], "Code",
+ CellChangeTimes->{{3.9459324285220585`*^9, 3.945932432552471*^9}},
+ CellLabel->"In[90]:=",ExpressionUUID->"4fe6c441-5e24-a74c-bc8f-4cf3eac980a3"],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{3.9459324329604206`*^9},
+ CellLabel->"Out[90]=",ExpressionUUID->"3a418cba-e7bb-a346-97d5-b1a30fd2d7ca"]
+}, Open  ]]
+},
+WindowSize->{958.5, 1005},
+WindowMargins->{{Automatic, -5.25}, {Automatic, 0}},
+FrontEndVersion->"14.1 for Microsoft Windows (64-bit) (July 16, 2024)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"c75965be-e32a-b34c-8e0b-266a15484d0f"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[1460, 33, 2105, 57, 243, "Code",ExpressionUUID->"27853cf7-eb1a-4941-a61e-20ae4548b250"],
+Cell[3568, 92, 910, 24, 102, "Code",ExpressionUUID->"2d283345-ec69-d94d-bfd5-fda3dcf6582e"],
+Cell[4481, 118, 604, 16, 85, "Code",ExpressionUUID->"9e56ab30-c001-0b4b-992f-df14a0c4eeb4"],
+Cell[5088, 136, 724, 19, 67, "Code",ExpressionUUID->"af38e522-4b25-0842-93a1-4a169576f800"],
+Cell[5815, 157, 323, 7, 50, "Code",ExpressionUUID->"d8db99a3-e2df-8d48-bd2b-0b4e7716cb57"],
+Cell[6141, 166, 268, 6, 50, "Code",ExpressionUUID->"9d3e7c4e-fbf1-4744-8461-e6d4ad08f2e7"],
+Cell[CellGroupData[{
+Cell[6434, 176, 230, 4, 50, "Code",ExpressionUUID->"e8da0ed0-9fa2-6f42-8d5b-3bcdb43b81cc"],
+Cell[6667, 182, 154, 2, 32, "Output",ExpressionUUID->"3a32af47-362d-0b46-b51c-5549cf762ef9"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6858, 189, 229, 4, 50, "Code",ExpressionUUID->"4fe6c441-5e24-a74c-bc8f-4cf3eac980a3"],
+Cell[7090, 195, 155, 2, 32, "Output",ExpressionUUID->"3a418cba-e7bb-a346-97d5-b1a30fd2d7ca"]
+}, Open  ]]
+}
+]
+*)
+

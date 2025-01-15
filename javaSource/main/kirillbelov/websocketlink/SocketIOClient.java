@@ -9,6 +9,5 @@ public class SocketIOClient {
     public LTPClient ltpClient; 
 
     public SocketIOClient(String host, int port, int redirectPort) {
-        this.ioSocket = new Socket()
     }
 }
