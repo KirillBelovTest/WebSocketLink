@@ -9,10 +9,11 @@
 
 
 BeginPackage["KirillBelov`WebSocketLink`", {
-	"JLink`", 
-	"KirillBelov`Objects`", 
-	"KirillBelov`CSockets`TCP`", 
-	"KirillBelov`CSockets`Handler`"
+    "JLink`", 
+    "KirillBelov`Objects`", 
+    "KirillBelov`CSockets`TCP`", 
+    "KirillBelov`CSockets`Handler`", 
+    "KirillBelov`LTP`"
 }]; 
 
 
@@ -67,17 +68,20 @@ Begin["`Private`"];
 
 
 CreateType[WebSocketConnectionObject, 
-	Function[connection, AppendTo[$connections, connection["UUID"] -> connection]], 
-	{
-		"UUID", 
-		"Socket", 
-		"Port", 
-		"Listener", 
-		"Client", 
-		"Data", 
-		"Handler", 
-		"HTTPHeaders"
-	}
+    Function[connection, AppendTo[$connections, connection["UUID"] -> connection]], 
+    {
+        "UUID", 
+
+        "ListenSocket", 
+        "ListenPort", 
+        "Listener", 
+        "ListenHandler", 
+        
+        "JavaWebSocketClient", 
+        "Data", 
+        "DataStore", 
+        "EventHandler"
+    }
 ]; 
 
 
@@ -86,7 +90,7 @@ CreateType[WebSocketConnectionObject,
 
 
 SyntaxInformation[WebSocketConnections] = {
-	"ArgumentsPattern" -> {}
+    "ArgumentsPattern" -> {}
 }; 
 
 
@@ -103,48 +107,48 @@ WebSocketConnect::notopened =
 
 
 WebSocketConnect[url_String, opts: OptionsPattern[{WebSocketConnectionObject}]] := 
-Module[{connection, httpHeaders}, 
-	javaInit[];
-	connection = WebSocketConnectionObject[opts]; 
-	handler = CSocketHandler[]; 
-	handler["DefaultAccumulator"] = getLength; 
-	handler["DefaultHandler"] = onMessage[connection]; 
-	handler["Deserializer"] = Function[#[[9 ;; ]]]; 
+With[{connection = WebSocketConnectionObject[opts]}, 
+    javaInit[];
 
-	connection["Socket"] = CSocketOpen["localhost", RandomInteger[{20000, 60000}]]; 
-	connection["Port"] = connection["Socket"]["DestinationPort"]; 
-	connection["Listener"] = SocketListen[connection["Socket"], handler]; 
-	
-	If[AssociationQ[OptionValue["HTTPHeaders"]], 
-		httpHeaders = JavaNew["java.util.HashMap"]; 
-		Block[{put}, KeyValueMap[httpHeaders@put[MakeJavaObject@ToString[#1], MakeJavaObject@ToString[#2]]&, OptionValue["HTTPHeaders"]]]; 
-		connection["Client"] = JavaNew["kirillbelov.websocketlink.WebSocketLinkClient", url, "localhost", connection["Port"], httpHeaders]; , 
-	(*Else*)
-		connection["Client"] = JavaNew["kirillbelov.websocketlink.WebSocketLinkClient", url, "localhost", connection["Port"]]
-	];
-	
-	connection["Deserializer"] = Function[ImportByteArray[#, "RawJSON"]]; 
-	connection["Data"] = CreateDataStructure["DynamicArray"]; 
-	connection["Handler"] = <|
-		"Echo" -> Function[{c, m}, Echo[m, "Message: "]], 
-		"Save" -> Function[{c, m}, c["Data"]["Append", m]]
-	|>; 
+    Module[{ltp, listenPort, javaLTPClient, javaWSClient}, 
+        ltp = LTPListen[onMessage[connection], 
+            "Responsible" -> False, 
+            "Deserializer" -> Function[ImportByteArray[#, "RawJSON"]], 
+            "Serializer" -> Function[ExportByteArray[#, "RawJSON"]]
+        ]; 
 
-	Block[{connect}, connection["Client"]@connect[]]; 
-	Block[{isOpen}, TimeConstrained[While[!connection["Client"]@isOpen[], Pause[0.001]], 15, 
-		Message[WebSocketConnect::notopened, url]]; 
-	]; 
+        KeyValueMap[(connection[#] = #2)&, ltp];
 
-	Return[connection]
+        listenPort = ltp["ListenPort"];
+
+        javaLTPClient = JavaNew["kirillbelov.ltp.LTPClient", listenPort];
+        javaWSClient = JavaNew["kirillbelov.websocketlink.WebSocketLinkClient", url, javaLTPClient]; 
+
+        connection["JavaLTPClient"] = javaLTPClient;
+        connection["JavaWebSocketClient"] = javaWSClient;
+
+        With[{dynamicArray = CreateDataStructure["DynamicArray"]}, 
+            connection["DataStore"] = dynamicArray; 
+            connection["Data"] := dynamicArray["Elements"]
+        ];
+
+        connection["EventHandlers"] = <|
+            "Echo" -> Function[{conn, msg}, Echo[msg, "Message: "]], 
+            "Save" -> Function[{conn, msg}, conn["DataStore"]["Append", msg]]
+        |>;
+
+        Block[{connect}, connection["JavaWebSocketClient"]@connect[]]; 
+        Block[{isOpen}, TimeConstrained[While[!connection["JavaWebSocketClient"]@isOpen[], Pause[0.001]], 15, 
+            Message[WebSocketConnect::notopened, url]]; 
+        ];
+    ];  
+
+    Return[connection]
 ]; 
 
 
-getLength[packet_Association] := 
-ImportByteArray[packet["DataByteArray"][[5 ;; 8]], "Integer32", ByteOrdering -> 1][[1]] + 8; 
-
-
-onMessage[connection_WebSocketConnectionObject][packet_Association] := 
-(Map[#[connection, connection["Deserializer"] @ packet["Message"]]&] @ connection["Handler"];); 
+onMessage[connection_WebSocketConnectionObject][message_] := 
+(Map[#[connection, message]&] @ connection["EventHandlers"]); 
 
 
 (* ::Section::Closed:: *)
@@ -152,14 +156,14 @@ onMessage[connection_WebSocketConnectionObject][packet_Association] :=
 
 
 SyntaxInformation[WebSocketPing] = {
-	"ArgumentsPattern" -> {_}
+    "ArgumentsPattern" -> {_}
 }; 
 
 
 WebSocketPing[connection_WebSocketConnectionObject] := 
-Module[{jclient = connection["Client"]}, 
-	Block[{sendPing}, jclient@sendPing[]]; 
-	Return[connection]
+Module[{jclient = connection["JavaWebSocketClient"]}, 
+    Block[{sendPing}, jclient@sendPing[]]; 
+    Return[connection]
 ]; 
 
 
@@ -168,17 +172,17 @@ Module[{jclient = connection["Client"]},
 
 
 SyntaxInformation[WebSocketClose] = {
-	"ArgumentsPattern" -> {_}
+    "ArgumentsPattern" -> {_}
 }; 
 
 
 WebSocketClose[connection_WebSocketConnectionObject] := 
-Module[{jclient = connection["Client"]}, 
-	Block[{close}, jclient@close[]]; 
-	Close[connection["Socket"]]; 
-	DeleteObject[connection["Listener"]];
-	KeyDropFrom[$connections, connection["UUID"]]; 
-	Return[connection]
+Module[{jclient = connection["JavaWebSocketClient"]}, 
+    Block[{close}, jclient@close[]]; 
+    Close[connection["ListenSocket"]]; 
+    DeleteObject[connection["Listener"]];
+    KeyDropFrom[$connections, connection["UUID"]]; 
+    Return[connection]
 ]; 
 
 
@@ -195,13 +199,13 @@ WebSocketClose[connection];
 
 
 Options[WebSocketSend] = {
-	"Serializer" -> Automatic
+    "Serializer" -> Automatic
 }
 
 
 SyntaxInformation[WebSocketSend] = {
-	"ArgumentsPattern" -> {_, _, OptionsPattern[]}, 
-	"OptionNames" -> {"\"Serializer\""}
+    "ArgumentsPattern" -> {_, _, OptionsPattern[]}, 
+    "OptionNames" -> {"\"Serializer\""}
 }; 
 
 
@@ -210,19 +214,19 @@ WebSocketSend::senderr =
 
 
 WebSocketSend[connection_WebSocketConnectionObject, frame_, OptionsPattern[]] := 
-Module[{serializer, frameString, jclient = connection["Client"]}, 
-	serializer = OptionValue["Serializer"]; 
-	If[serializer === Automatic, serializer = connection["Serializer"]]; 
-	
-	frameString = serializer[frame]; (*_String*) 
+Module[{serializer, frameString, jclient = connection["JavaWebSocketClient"]}, 
+    serializer = OptionValue["Serializer"]; 
+    If[serializer === Automatic, serializer = connection["Serializer"]]; 
+    
+    frameString = serializer[frame]; (*_String*) 
 
-	If[!StringQ[frameString], 
-		Message[WebSocketSend::senderr, frameString]; 
-		Return[Null]
-	]; 
+    If[!StringQ[frameString], 
+        Message[WebSocketSend::senderr, frameString]; 
+        Return[Null]
+    ]; 
 
-	Block[{send}, jclient@send[frameString]]; 
-	Return[connection]
+    Block[{send}, jclient@send[frameString]]; 
+    Return[connection]
 ]; 
 
 
@@ -238,10 +242,10 @@ If[!AssociationQ[$connections], $connections = <||>];
 
 javaInit[] := javaInit[] = 
 Module[{$jlink}, 
-	InstallJava[]; 
-	$jlink = ReinstallJava[]; 
-	Apply[AddToClassPath] @ FileNames["*.jar", {FileNameJoin[{$directory, "Java"}]}]; 
-	$jlink
+    InstallJava[]; 
+    $jlink = ReinstallJava[]; 
+    Apply[AddToClassPath] @ FileNames["*.jar", {FileNameJoin[{$directory, "Java"}]}]; 
+    $jlink
 ]; 
 
 
