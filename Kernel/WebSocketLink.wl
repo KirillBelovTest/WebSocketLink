@@ -133,7 +133,6 @@ With[{connection = WebSocketConnectionObject[opts]},
         ];
 
         connection["EventHandlers"] = <|
-            "Echo" -> Function[{conn, msg}, Echo[msg, "Message: "]], 
             "Save" -> Function[{conn, msg}, conn["DataStore"]["Append", msg]]
         |>;
 
