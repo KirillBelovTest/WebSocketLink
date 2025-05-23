@@ -1,0 +1,788 @@
+<|"Notebook" -> <|"Controller" -> "b6a33d2a-67ed-453b-9122-634e07841882", 
+   "FocusedCell" -> CoffeeLiqueur`Notebook`Cells`CellObj[
+     CoffeeLiqueur`Notebook`Cells`CellObj`$58], "MessangerChannel" -> 
+    Messanger, "ModalsChannel" -> "ae954bd0-b5da-46f1-9e20-9f0a50ee7f3b", 
+   "Objects" -> <|"b558487b-b096-4eb6-bbfe-a524ebaa5a34" -> 
+      <|"Public" -> Hold[{PlotlyNewPlot[{Association["type" -> "candlestick", 
+             "x" -> {"2025-05-21T13:24:00", "2025-05-21T13:25:00", 
+               "2025-05-21T13:26:00", "2025-05-21T13:27:00", 
+               "2025-05-21T13:28:00", "2025-05-21T13:29:00", 
+               "2025-05-21T13:30:00", "2025-05-21T13:31:00", 
+               "2025-05-21T13:32:00", "2025-05-21T13:33:00", 
+               "2025-05-21T13:34:00", "2025-05-21T13:35:00", 
+               "2025-05-21T13:35:00", "2025-05-21T13:36:00", 
+               "2025-05-21T13:37:00", "2025-05-21T13:38:00", 
+               "2025-05-21T13:39:00", "2025-05-21T13:40:00", 
+               "2025-05-21T13:41:00", "2025-05-21T13:42:00", 
+               "2025-05-21T13:43:00", "2025-05-21T13:44:00", 
+               "2025-05-21T13:45:00", "2025-05-21T13:46:00", 
+               "2025-05-21T13:47:00", "2025-05-21T13:48:00", 
+               "2025-05-21T13:49:00", "2025-05-21T13:50:00", 
+               "2025-05-21T13:51:00", "2025-05-21T13:52:00", 
+               "2025-05-21T13:53:00", "2025-05-21T13:54:00", 
+               "2025-05-21T13:55:00", "2025-05-21T13:56:00", 
+               "2025-05-21T13:57:00", "2025-05-21T13:58:00", 
+               "2025-05-21T13:59:00", "2025-05-21T14:00:00", 
+               "2025-05-21T14:01:00", "2025-05-21T14:02:00", 
+               "2025-05-21T14:03:00", "2025-05-21T14:04:00", 
+               "2025-05-21T14:05:00", "2025-05-21T14:06:00", 
+               "2025-05-21T14:07:00", "2025-05-21T14:08:00", 
+               "2025-05-21T14:09:00", "2025-05-21T14:10:00", 
+               "2025-05-21T14:11:00", "2025-05-21T14:12:00", 
+               "2025-05-21T14:13:00", "2025-05-21T14:14:00", 
+               "2025-05-21T14:15:00", "2025-05-21T14:16:00", 
+               "2025-05-21T14:17:00", "2025-05-21T14:18:00", 
+               "2025-05-21T14:19:00", "2025-05-21T14:20:00", 
+               "2025-05-21T14:21:00", "2025-05-21T14:22:00", 
+               "2025-05-21T14:23:00", "2025-05-21T14:24:00", 
+               "2025-05-21T14:25:00", "2025-05-21T14:26:00", 
+               "2025-05-21T14:27:00", "2025-05-21T14:28:00", 
+               "2025-05-21T14:29:00", "2025-05-21T14:30:00", 
+               "2025-05-21T14:31:00", "2025-05-21T14:32:00", 
+               "2025-05-21T14:33:00", "2025-05-21T14:34:00", 
+               "2025-05-21T14:35:00", "2025-05-21T14:36:00", 
+               "2025-05-21T14:37:00", "2025-05-21T14:38:00", 
+               "2025-05-21T14:39:00", "2025-05-21T14:40:00", 
+               "2025-05-21T14:41:00", "2025-05-21T14:42:00", 
+               "2025-05-21T14:43:00", "2025-05-21T14:44:00", 
+               "2025-05-21T14:45:00", "2025-05-21T14:46:00", 
+               "2025-05-21T14:47:00", "2025-05-21T14:48:00", 
+               "2025-05-21T14:49:00", "2025-05-21T14:50:00", 
+               "2025-05-21T14:51:00", "2025-05-21T14:52:00", 
+               "2025-05-21T14:53:00", "2025-05-21T14:54:00", 
+               "2025-05-21T14:55:00", "2025-05-21T14:56:00", 
+               "2025-05-21T14:57:00", "2025-05-21T14:58:00", 
+               "2025-05-21T14:59:00", "2025-05-21T15:00:00", 
+               "2025-05-21T15:01:00", "2025-05-21T15:02:00", 
+               "2025-05-21T15:03:00", "2025-05-21T15:04:00", 
+               "2025-05-21T15:06:00", "2025-05-21T15:07:00", 
+               "2025-05-21T15:08:00", "2025-05-21T15:09:00", 
+               "2025-05-21T15:10:00", "2025-05-21T15:11:00"}, 
+             "open" -> {106290, 106330, 106320, 106320, 106320, 106300, 
+               106270, 106190, 106210, 106150, 106170, 106190, 106190, 
+               106200, 106190, 106190, 106200, 106230, 106170, 106100, 
+               106080, 106070, 106080, 106080, 106100, 106040, 106040, 
+               106030, 106030, 106050, 106070, 106080, 106110, 106100, 
+               106110, 106120, 106140, 106130, 106130, 106120, 106120, 
+               106170, 106220, 106110, 106090, 106100, 106110, 106140, 
+               106140, 106190, 106250, 106330, 106330, 106220, 106310, 
+               106260, 106240, 106240, 106100, 106130, 106130, 106120, 
+               106130, 106150, 106130, 106170, 106200, 106220, 106230, 
+               106240, 106290, 106340, 106350, 106350, 106310, 106320, 
+               106330, 106320, 106240, 106250, 106270, 106300, 106300, 
+               106290, 106290, 106260, 106250, 106250, 106230, 106250, 
+               106290, 106290, 106310, 106290, 106290, 106300, 106300, 
+               106300, 106300, 106270, 106260, 106230, 106320, 106320, 
+               106290, 106330, 106380, 106340}, "high" -> {106310, 106330, 
+               106320, 106320, 106320, 106300, 106270, 106210, 106210, 
+               106170, 106200, 106200, 106200, 106200, 106190, 106190, 
+               106240, 106230, 106170, 106100, 106080, 106080, 106110, 
+               106080, 106140, 106040, 106040, 106030, 106090, 106060, 
+               106090, 106100, 106110, 106100, 106120, 106150, 106140, 
+               106140, 106130, 106120, 106160, 106220, 106220, 106110, 
+               106110, 106120, 106130, 106150, 106180, 106230, 106360, 
+               106330, 106330, 106310, 106310, 106260, 106240, 106240, 
+               106130, 106130, 106130, 106120, 106150, 106150, 106160, 
+               106190, 106220, 106250, 106260, 106290, 106330, 106360, 
+               106350, 106350, 106310, 106360, 106330, 106320, 106250, 
+               106270, 106290, 106300, 106300, 106290, 106290, 106260, 
+               106260, 106250, 106240, 106290, 106310, 106300, 106310, 
+               106300, 106310, 106300, 106300, 106300, 106300, 106290, 
+               106260, 106320, 106320, 106330, 106330, 106390, 106380, 
+               106390}, "low" -> {106290, 106320, 106320, 106320, 106250, 
+               106280, 106160, 106190, 106150, 106140, 106170, 106190, 
+               106190, 106180, 106190, 106190, 106190, 106180, 106110, 
+               106080, 106070, 106070, 106080, 106070, 106050, 106040, 
+               106030, 106020, 106030, 106050, 106070, 106080, 106100, 
+               106100, 106110, 106120, 106140, 106130, 106120, 106120, 
+               106120, 106170, 106110, 106080, 106080, 106100, 106100, 
+               106140, 106140, 106190, 106250, 106320, 106180, 106200, 
+               106270, 106220, 106240, 106050, 106100, 106120, 106120, 
+               106120, 106130, 106110, 106130, 106170, 106200, 106200, 
+               106230, 106240, 106290, 106340, 106350, 106300, 106310, 
+               106320, 106330, 106200, 106240, 106250, 106270, 106300, 
+               106290, 106290, 106260, 106250, 106250, 106230, 106230, 
+               106250, 106290, 106290, 106280, 106280, 106290, 106300, 
+               106290, 106300, 106210, 106270, 106220, 106230, 106310, 
+               106300, 106290, 106330, 106330, 106320}, "close" -> 
+              {106310, 106320, 106320, 106320, 106300, 106280, 106190, 
+               106210, 106150, 106170, 106200, 106200, 106200, 106200, 
+               106190, 106190, 106240, 106180, 106110, 106080, 106070, 
+               106070, 106100, 106070, 106050, 106040, 106030, 106020, 
+               106090, 106060, 106080, 106100, 106100, 106100, 106120, 
+               106140, 106140, 106140, 106120, 106120, 106160, 106220, 
+               106110, 106080, 106110, 106110, 106130, 106150, 106180, 
+               106230, 106360, 106320, 106220, 106310, 106270, 106220, 
+               106240, 106050, 106130, 106130, 106120, 106120, 106150, 
+               106130, 106160, 106180, 106210, 106250, 106250, 106290, 
+               106330, 106350, 106350, 106300, 106310, 106330, 106330, 
+               106240, 106240, 106270, 106290, 106300, 106300, 106290, 
+               106260, 106250, 106260, 106230, 106240, 106290, 106300, 
+               106300, 106280, 106300, 106310, 106300, 106290, 106300, 
+               106210, 106290, 106220, 106320, 106310, 106300, 106330, 
+               106390, 106330, 106380}]}, Association["margin" -> 
+             "autoexpand", "width" -> 1000, "height" -> 600, 
+            "paper_bgcolor" -> "rgba(0, 0, 0, 0)", "plot_bgcolor" -> 
+             "rgba(0, 0, 0, 0)"]], FrontInstanceReference[
+           "86be1723-a9b2-4b14-861a-9e19948b5b8d"]}]|>, 
+     "4ea97ebd-4c81-4a5b-9e36-c581f7c50938" -> 
+      <|"Public" -> Hold[
+         CoffeeLiqueur`Extensions`FrontendObject`Internal`Compressed["eJzt3c2\
+O7Ep6LuZx92X0RBMPGCSTSQ59PDAEGB7I8EjQQDhuCAL0Y7QkA+fufZq7VbVTq76I2JErKyMynx4w\
+3uauZzEqK5M/wS+Df/v73/3hr//57//hj3/4X37/u7/9/e9+94f/8z/++Y9/+sf//r/+6U9//z/+v\
+PJc+7s//B//+G//fv7f3/3tr/Lt//ndFLVn83fnkuM4juM4juM4juM47h43N7q0NcKlFW6tv+J+bf\
+0dU/Ors+yt8nIUZIraa+mVDeVR+j0jOU+tvZ1T6a/yALmkZtn62t4h59J76BGv7dr8HmrtbdovrXI\
+rvfvCT9na/PmcW/dfR2tnr0sjXFu7Opf+IuGuttGNcrTkOI7jOI7jOI7jOG4ody7O1Te0+35zHMdx\
+HMdxHMdx3LCuVHUSuaW1NOJaqgSKYErN9VlbcyXQ1F7x1FzZdWmulbq01hDNl9ZKIJIkyefL9n1fs\
+1yb5dy6j09H6UgfyrX1kH20FiVemqu4m4tEG90op2scx3Ecx3Ecx3Ec92B3Ls7VN7T7fnMcx3Ecx3\
+Ecx3EDuOZisdYbyMVigHCLU/MkYNfSqxMXmbWXSygyI0mSJMlXl+3H7FLRYCiLEz2GsngmFZ6Dra3\
+ni9fWKSKLZf7hFhvdKGfuHMdxHMdxHMdx3NPduThX39Du+81xHMdxHMdxHPfWrnVulqW10K34NL24\
+zq35/vVSenXi+9ftcqw7/CRJkiRJku8unzCpY3vdYvND67fmGRZbrxvMsMhxHMdxHMdxHPd0dy7O1\
+Te0+35zHMdxHMdxHMc9xLXeo1ubb5jNzTcUU3Px2tr83FLTu5EkSZIkSZLk02Tz9IvN3+9JW+vUhN\
+fWB0w3z9bdWv04ysUqx3Ecx3Ecx3Fv7c7FufqGdt9vjuM4juM4juPexM3N01Sk1htgqXmeujueXDb\
+YzUWSJEmSJEmSJMka2fw1obl5/vDLt8+S2FrQOMp1OcdxHMdxHMdxXblzca6+od33m+M4juM4juO4\
+O13p1knkrqUNhvdctuZauLV56orB7oSRJEmSJEmSJEmSz5XN15+pdQLElFov0ItFkeEmG90oIx4cx\
+3Ecx3Ec9ybuXJyrb2j3/eY4juM4juO4l3Pt9wim0mQE4X2JqXlGOw91JUmSJEmSJEmSJMke5No6Kp\
+C21gc9FzsbQU9d5jiO4ziO47iHuHNxrr6h3feb4ziO4ziO46pd63fa5+aavLl53H5pr6xTk0eSJEm\
+SJEmSJEmS5PfJ1gGXdGyN8to6VNM6T+IoY18cx3Ecx3Ec9xd3Ls7VN7T7fnMcx3Ecx3Fv6ObWkeK0\
+lDYZjmvfUZs31vg9SZIkSZIkSZIkSZLkCLL5ac3F5ylEI0vX5uLFRjfKWB3HcRzHcRzXrTsX5+ob2\
+n2/OY7jOI7juA5c2lvhXPoGeTh6u5QGYfsapSZJkiRJkiRJkiRJkiRfQbY+i3meWmdS3EqdjWCrG2\
+VMkuM4juM4jqt25+JcfUO77zfHcRzHcRz3RVua2i5yR2mD4djm3CwHG/0lSZIkSZIkSZIkSZIkyW+\
+Wa+mxx5FMzQ9aXlunVRxlBJXjOI7jOO4N3bk4V9/Q7vvNcRzHcRw3hGv9anDzk1FSe61f+9NYxhpX\
+JUmSJEkylGvQluURtBW9vYShjOcpDkW8XMJQgY8wVLzOUxjK+HIJQwW+hqGi23sYHvyCLUsYKt4kK\
+Q7lt+c1DBU4heGRH8axdjokSZIkSQ4u19bvK6eltYAxeUwzx3Ecx3Hcw925OFff0O77zXEcx3Ec96\
+0uNX+5d20u8FtLg2NdjR6SJEmS5LfKS9BWVCalMJTxdg1DxW87pUyq8B/Vbl+lmsqolEk1tXtLLpX\
+9Z6nfV6nslzWXyv4yZVPZX/KJ79yv2VT2SzYV/WfN6Fep4vOz5FLF53fNpfL+Y58yqcKvl0yqKc6c\
+Mqnsr1sYKoo7Uxgqen5PyfRYB2aSJEmSfFlZfOJKNKK8t8LS1757GTLnOI7jOI77ie5cnKtvaPf95\
+jiO4zjuzV3rOM61ed6/ufS4kK5G1kiSJMnhZft0WHfN/3U5wlBTYrJmUk2J3SWTakp8rrlUUWK05d\
+I3lEg9u8SL53n+Xf29++8pm8ol2nsulY+fx55JFf5jW1+lst9TGMp4uYahoudTGPo8vSNJkiTJ3yJ\
+bn7aTrs1j7oonOY7jOI4b2J2Lc/UN7b7fHMdxHMe9iGt+kEe6lDYZjx+1y7HGyUiSJMkf5TVoy3Kd\
+w1Bzj37NpAq/z5lUU11xzaWK6o47JzB7enULz/M8z/PD+c+nz3+Vyj5tuVQ+//o41/kqlf3HqdqPo\
+aLz1ziUS0uDtuJ3DlqSJEmS/EIuzY8Fn1qrLUt97eWuB8dxHMdxQ7hzca6+od33m+M4juO4B7nWL6\
+Re9gIMB1fSUENBJEmS5BfyErQVt3QvYajocNozqeJm9LTnUsWd/Gsu9V+JwPM8z/M8z3+zv/ObKOu\
+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\
+zPM/zPM/zPM/zPM/z/M/06bhmUsX2lzh0eauOJMlfZKl4JK5XKW0zkippOe4t3bk4V9/Q7vvNcVyj\
+az1PSFsqyL7OpEjyFeU9ha1bJlUMLKxHLnU/sMLzPM/zPM/zPM/zPM/zPM/zPM+/mJ+WXCrfeZvCU\
+MZj3WQkydeSrWWu+9EIR6kH4jjuS3cuztU3tPt+c9zbu1K1auim9jpXFbIk+XPkHLVFeRxhqNisIl\
+ee53me53me53me53me53me53me//Qp5VLZ73Ho8j4lSZKnXFprbpbSJnspKuI47kt3Ls7VN7T7fnP\
+c27t1K8DwmL+WNtnVGQpJvqTcL2GouOZet1zqf8yB53me53me53me53me53mef02/LrlUHnbfr5lU\
+0/8lm7p//XieH9dPay5VbD8TerzbSZLk2R5LQUYlP3ujG6WkieMGcefiXH1Du+83x72MS2sBhgfvq\
+XQI7umEgSRfU25zGGqGEC+51P8QAM/zPM/zPM/zPM/zPM/zPP+afp5zqejvmz9ivuZS/y8ez/N8q5\
+9SLpXveR5hqMBBS5JkrSwV/4RVQ3OzbHSj1FNx3De7c3GuvqHd95vjunNzo0tL81yyxaNwX+cMJNm\
+v/Ji/9cdQcUW7zLnU/xU5z/M8z/M8z/M8z/M8z/M836lfs6lcUTVlUsX2jziUN345MmmEF5/neX5M\
+f+/OP21hqMBBS5JkpVxbi48updqjXqqrOG4Qdy7O1Te0+35zXHfuchRgfEy8tsqxjv0k+XB51xNP5\
+s/Lwa9S99fHPM/zPM/zPM/zPM/zPM/zfK9+zqbisPnHRBBfpQqfwlDG1zUMNb/5lE39/+V4nuff06\
+ftmkllfwnaii0HLUmSlXIqyXhOwEY4SlkXxzW6c3GuvqHd95vjHuZS6Qsg8TGqucB2rGMxST5eLmG\
+owPs1k/q/WOV5nud5nud5nud5nud5nuc79cuRS0V/bGEo4yVoy/Kuh4HP85pL/f/NeJ7n+UZ/57zp\
+y5JJDz3sBS1JvpssPQY7rpoqbbOX+i6O+2Z3Ls7VN7T7fnPcw1yaS7L9KNXXMZUkHy3vuPpZp0x6/\
+HXf869beZ7neZ7neZ7neZ7neZ7n+Yf4zxrTr1LRfww1/xjKuH3AfY7aigH3NZMG+IPxPM/zY/p1z6\
+WiP6YwPPKAS5LkKdfWmqvVZLjci7tzca6+od33m+OKbrkWYHjMWExOS5I/R+5rGGqu36Zs6v76ked\
+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\
+LOQwVb91pyqX+P/c8z/M8z/M8z1f7dJ0zqWL7UdvnpRJJ3imjaszDlL5Fdy7O1Te0+35/i1tT63t2\
+ba0E7vMTRpK//MRyCUPFqcl6zaXuT814nud5nud5nud5nud5vms/7blUHvw7wlDGY41zkuRffjJtm\
+VTzoV2zqfudBs/zPM/zPM/z9X7dc6l80b2GoYwHu9QiyaxM+16QUS3n3OhGqVVV01vnUroO9H4nyW\
++Qy5JJA5xi8TzP8zzP8zzP8zzP83zHPu1rJlVsP8WhzwFHkrxTrksYKj4x65RL3e8xeJ7neZ7neZ4\
+fx6dlyqQKH7QkOaQsTrUa1vWWyjl7KTxV2Fvn1ta3UGqerXesjwr5bvIShoozlXnJpe7PlHie53me\
+53me53me53k+71M2FQff1jWTyv4I2ootBy1J9iz3oK3Y5n5k0gj7Gp7neZ7neZ7n38Z/Phbkq1T01\
+6Aty7GuEEnyl58IZ2mdWuUoZa7vVta7NNf1ribsJV9RXrcw1JyrLNnU/bkSz/M8z/M8z/M8z/M8/9\
+r+c7bOr1J52G1aMqnsl6Ct2HLQkuSLyunIpAH2NTzP8zzP8zzP89V+zqaS365hKOPBLhVJMivTvhV\
+kWBTc6JT2PtalaWl+FzVXBQ/1nifHlGvQVmzzumbSCKc8PM/zPM/zPM/zPM/z/Ev7ecul8i2vFIaK\
+jUdtl4OEJPk8+VEy/2Oo+KCtUy71v5fieZ7neZ7neZ7/Jp8u10yq2H7UdnmpSZIFuewFGdaQlgpBe\
+yl2HbW4d278k6a9VQ721iXfTM6XTCji5cil7s9ceJ7neZ7neZ7neZ7n+c79tOVS0X8MVf0YyniscT\
+6SfKKcwlCBj5RJA+yleJ7neZ7neZ7nR/Hzkkvl67cUhgoctCT5TFma7DWqQL2WNtlLqeyoJb7paP2\
+bLu0T+I713iXfS+5zGAY4++B5nud5nud5nud5nucf7JdsKg5bXbdMqvBrGCpw0JIk+V8+6FFbcYN3\
+zaSaXcyaTf3vInme53me53me50fx911/XfYwlPFYF8kkmZfpYhLfx7pLc4XvxSy+5EvK65JJI5yB8\
+DzP8zzP8zzP8zzP83k/Z1Nx/OjjcfdfpQp/1/yeQUuS5M+S6xyGiv2LB73xPM/zPM/zPM+/hU/rmk\
+kVPmhJckiZSpWk4fy/je7dinxTKr1SXb0fSLJW7mGoOJAvSy51fyLB8zzP8zzP8zzP8zz/8v6z6O6\
+rVB48mpZMqth+1PY5VEaSbyWPoK3Y5r5n0gB7Rp7neZ7neZ7nef57/HTNpaK/BG1ZjnWFTr6JXJeC\
+jEpXlydOAHwuztU39Nu2/5te4rS3ysHeSuSbye0Shpoj+X2TuTz9TILneZ7neZ7neZ7neb53Px+5V\
+B782cJQxmONc5EkWSmnNZNqdmtLNnW/W+V5nud5nud5nue/x9/51fNlCkMZD3apTpLnT0Qlr3trcf\
+CoNb5b60u8HB3+WUnybvlx+PsqDXA+wPM8z/M8z/M8z/M837v/nPb2q1S+n7GFoYwHG6oiSbJKrik\
+MFfukdcql/vepPM/zPM/zPM/z/CB+zaaS37cwlPFY1/kk+ctPRCWv6VIqen21It81Nb/Ic4d/WJL8\
+5Se2oK3Y5nFk0ghnBDzP8zzP8zzP8zzP8yV/3x2FdL1mUo0PQwUOWpIkR5Z70FZsc18yaYQdMs/zP\
+M/zPM/zPM+XfVqPTKrwQUuSQ8pUKnoN64Mb3bOrfPcSjF/kdaQ/LPlmcl7iUMbrJZe6P67zPM/zPM\
+/zPM/zPP8Ofsqm4rDLcmRS2R9BW7HloCVJ8k3ltGZSzd7wvq8tPH9vzvM8z/M8z/M8z/MVfppyqej\
+vmDAxaEnyiXLZCzKs8v0JkwCfi3P1Df3N/87XH/WgTbNqXfIV5ZbCUHNkXbKp+yM7z/M8z/M8z/M8\
+z/P9+3XNpfKwyZ2VcUvQVmw5aEmSfE+5rGGo2BUul1zqf1fO8zzP8zzP8zzP89/h77x+TnsYKnDQk\
+uQzZeusvGvvdb7Rr5yupV+5rz8QSVbK6cikAY7PPM/zPM/zPM/zPM/375eUS0W/7WGo2HjU9jlUQ5\
+Jkt/KO+XyuWyYNsBPneZ7neZ7neZ7n+RH8euRS0a9LGMp4rEEO8l1kaWbbqMb2uDbCn1Xku7T+yqm\
+1PHi0Py35ZnKbMmmA4zPP8zzP8zzP8zzP84/3n3PffpXK4+NTGMp4sKEWkiRfUB7XMNTsgT0Rjed5\
+nud5nud5nud799cjDGU81jgHSeZlWueCfHSJb9pbf+mlVNbc0wtNkrVyTnMudX+E5Xme53me53me5\
+/n38PdViN07h6QH1ZEkObT8eDDnj6FiD3znoz6ffwTheZ7neZ7neZ7neb447PDx2LGvUoUPWpIcUa\
+Z9K8iHz+TbPJXvJQ30QpNvJ48wVBzn1jmXuj/O8jzP8zzP8zzP8/wYfsqm8jjzkUllfw3aii0HLUm\
+S5HfJPWgrtnndM2mEYwfP8zzP8zzP8zzP84/2aTsyqcIHLUkOKdO1IKPa3OPTnYtz9Q2t+3cupSLj\
++Jc2lS/Zr1zXMNQc51I29X6c5Xme53me53me5/lv8Xd+R/Y4wlDGa9CW5VgjHCRJkjc7zjkMNXv9O\
+Zu6P+rwPM/zPM/zPM/zPP9wn44jkyp80JLkkHIpyagqd/5ZU/ju7VP4DvVKk28mrykMNQe6NZt6P9\
+DyPM/zPM/zPM/zfJWft1wq+m0JQxmPNc5AkiT5c+TH4yx/DBV77WXNpf6POjzP8zzP8zzP8zzP9+/\
+nNZeK3rwM5EvJdS/IqCp3+dWku+fiXH9j6/6hNB3f/2uT5OPlNGfSAAdLnud5nud5nud5nq/x05pL\
+Rb9cw1DGgw0VkCRJ/hR5x12qbc2kAQ45PM/zPM/zPM/zPM+/vv8cIf4qlf0chy6HekiyJFNBRpW52\
+6/guTjX39i6fygtpSrjvl4wkqyUy5xJAxwveZ7neZ7neZ7n+UH8kk3F69ftyKQKfwlDBQ5akiRJ8i\
+u5L2F4/PHi+cc7nud5nud5nud5nudf3q9HLhX9eglDGY81TkS+i1wLMirL3edPeC7O9Te27h9K21g\
+vGElWyo+x8a/SAMdLnud5nud5nud5/nv8neOVaVkyqey3oK3YctCSJEmSX8l5ikMZz1su9X+w43me\
+53me53me53meL/o5m0r+uoehjMcaZyLJX34irMmdpk95Ls7/cIPr+pD2Hn9vkrxbXpdMGuGAyfM8z\
+/M8z/M8z1f5Zculot+vYajYeNT2ealMkiQ5rFyDtmKbl2smDXCY43me53me53me53mef7hfs6k4/j\
+JdMqnCBy1J9izD0t45fcpzcf6HG1zZh2nr8PcmybvlccmkEY6ZPM/zPM/zPM/zb+LTkUtF//GMlh9\
+DGQ92qUuSJPmG8uPL+j+GmmPUlE3dHyN5nud5nud5nud5nuc792mZM6nCBy1J9izDut71Z03ZO6e9\
+w9+bJH/5iSVoK445n9/7+Cp1f8zjeZ7neZ7neZ4fxy/ZVLxm3JZMqvDLnkn84/0lkyp82jOpxl8zi\
+ed5PuePTKo4/s2XXBrg+M3zPM/zPM/zPM/zPP/aPl22TKrwQUuSPcuw5vhy/ZTn4vwPN7iyD0uPvz\
+dJ/vIT16CtOOakJZe6P+bxPM/zPM/zPM/zPM/zPM/zPM/zPM/zPM/zPM/zbT5dL5lU4YOWJHuWcc3\
+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\
+T7c/Zm6cjl7o/qvM8z/M8z/M8z/Pv4qdsKl45H2Eo47EGCUiSrJNz1BbldoShYrPLnEsD7I15nud5\
+nud5nud5nucf69OyZFKFD1qSHFJOJRnW+Da6Z5f4lvodvlKzCl/yJeW6ZVL/x3Se53me53me53n+P\
+fy9T5i/BG3FloOWJMnnyzs+2R/z3n6VKvZp65JL3e9TeZ7neZ7neZ7neZ7nH+9TNpX8dg1DGY81yE\
+WSv/xEWPK67o2ytcj22UW+zcXBl9LMxWO9I0jyl5/Y5zDUHI2XbOr/bILneZ7neZ7neZ7/Fr+kXCr\
+7PQ5dXm2TJFkppzBU4HXOpJo9m5Etnud5nud5nud5nuf5h/r5yKXy+M8lDBU4aEmyZxlVr+5LI3y3\
+Mt9j7vCvSpL3yo8nAf4YKo7F5izheZ7neZ7neZ5/Ez9nU/GydUqZVOGDliTJDuQ1DDX4mkk1O6c1m\
+/rfufI8z/M8z/M8z/M8z7+2T/uUSRXbj9o+h8pIMi/XUg1qVLy6rI3w3ap8l9Ksx/HfxizAZL9yCd\
+qKbR6XTOr/LILneZ7neZ7neZ6v8+l6ZFLZX4K2YstBS5LkTxsZOsJQsXOZ1lzqfufG8zzP8zzP8zz\
+P8zzPP9YfexjKeKxxNpIsyOlakFHZaqn2VHnvL+3R+pdJZv8lX1J+3Kz5KvV/AsHzPM/zPM/zPP82\
+fllzqejvevrLYJe6JPk02T4ZyXYJQ83+IeVS//s3nud5nud5nud5nud5/rF+nXKp7FMcuhynI8l7Z\
+VR+mtZSAWovhbKjFvi2urT2+D4iyXvlsoWh5ui/5VL/Zy88z/M8z/M8z/Pf5pdsKl72TSmTKnzQki\
+R5Ky9BW/Mp3TKpYi9hlIXneZ7neZ7neZ7neZ5/oE97yqSyv+PZ4kFLks+US0FGZaTX0jSxvdS7vlt\
+977Y/7L3Q1zuXfC95DdqKbX7MtP9V6v+shed5nud5nud5/rt82qdMKvstaCu2HLQk+aJyCkMFXo5M\
+qtlRpGzqfUfF8zzP8zzP8zzP8zzP9+7XbCr5YwlDGQ82TkiSeblsBRlOEdtaFKy297Eutb8Xhnrnk\
+mStvHPeqHtPOZ5/ysTzPM/zPM/z/Nv45ZJLRb8sYSjjwS4VSfJOOU9xKG/2emRSzb7CWAXP8zzP8z\
+zP8zzP8zzfsV9SLpXHzy5hqMBBS5I9y7AWdG+uIm10qnsf60p/l+g9lK6lLY71jifJ//yJTCifbVx\
+zqf+zJZ7neZ7neZ7nB/JLNhUvm6ZrJlX4oCXJ15TLGoaKj+s059IAuxue53me53me53me53mef5xP\
+ly2TKnzQkuRryqgO9Lg2wlEKXd+tsLfV7a0VwfNl7fD9TpJ/+YmoLW9z2zKp/7Mknud5nud5nufH8\
+Wm/ZFLZX4O2YstBS5KPl+1X7NslDBWbnY9c6n53wfM8z/M8z/M8z/M8z/OP9ffNQfFRv/tjKOOxRj\
+hJsiDX1plz51I5Zi8Vpyp6H+vm5orexRy/5CvKyzUMjz+/ef75Gc/zPM/zPM/z1f7OZ3wslzCU8Vj\
+XWeRryTVoK7Y5LZlU8aFb11zqf6fB8zzP8zzP8zzP8zzP8x37dFwyqezvGDkMWpIcUaZ9LsiokLO1\
+EniUQlUFvT/nfRC+8y6lSZ57+pyQZK28BG3NeU3KpP7Py3ie53me53n+vfycTcXz/2nNpAoftCT5D\
+XIJQwVeUybVfPR8D5bneZ7neZ7neZ7neZ7nH+fvG/r+eILcj6GMBxsnJcmCbJ0udz8a4Sjlpsp5+3\
+RbqY48fq8vQ30ySbJO7lsYas6n1mzq/3yQ53me53me58fx6WP48atU9tegrdhy0JJk9bt/jkPFWz9\
+lUs1Hz6Urz/M8z/M8z/M8z/M8z3fr0zWXyuOHd80DELQkOaRcStOchhOrluoieyn9VMr7Wq75rZ62\
+kT6YJFkrpzDUnE7tudT/6SDP8zzP8zzPf6df9lwq+mUJQxkPdp1CdijXOQwV7/6Ucqn/Ty/P8zzP8\
+zzP8zzP8zzP8xl/35fpjy0MZTzWOCtJ3ivDYtzmGXlHqfpUxcv9+X9pTh1+LknyifLO5/I+/ySS53\
+me53me53+Lv28QMn3OBPBFqvBBS5K1ctvCUPEBWKZcGuADzPM8z/M8z/M8z/M8z/P8w/y85lJ52HM\
+NQwUOWpIcU5YqFMOZTY9GOErxpiJe7s//m0tv9PCztar+JV9S3vNUgjkdudT/+SfP8zzP8zz/Vj4d\
+cyaV/TVoK7YctOSY8hK0FducLplU8RlYL7nU/WeQ53me53me53me53me5/lH+iWbHj1+OdY4L0k+S\
+qZjL8iornFrdKPUbarf5f78v9Yi3LQp3yXJX8vjCEPNSeN9M589/6SX53me53me/1a/rrlU9B/1jT\
++GMh7rPJ0syhSGCrxumVTzSZizqftPIs/zPM/zPM/zPM/zPM/z/fo051J5/POe+d8GGycmyYJcCjK\
+qTDxGKaF8I3cuztU3tPt+c79qL9fmz/LcLMfaZ5FvJu+bsnfKpf7Pd3me53me5/nf6O+rV0yfJ51f\
+pAoftOSYct7jUN7svmdSzZvZ1xB5nud5nud5nud5nud5nn+Uv2/u3P0ShjIea5yYJB8m55IMJxRtr\
+fcdpXxyQHcuztU3tPt+c79qW2tv01Gay7qrHQ9JPlxe5zDUnKKan4rneZ7neX4kn46USRV+CkMFDl\
+rymXLdw1DxfkxbLnX/eeB5nud5nud5nud5nud5no98OpZMKvstaCu2HLQk+ZoyrLpNR6Mcpfzxjdy\
+5OFff0O77zf0Ed00FGO88zM5LvqK84wTxesmk/k+teZ7neZ7nh/NryqWiX6cwlPFYJ7ljySVoy3Kf\
+w1DxflquudT/54HneZ7neZ7neZ7neZ7neT7y6yWXiv5jUz+GMh5rhJokHybn1mrbuVSj10sZIld05\
++JcfUO77zf3E1wqwXDfMa2tcqx9JElWynUNQ8058X01Jk8/p+d5nud5nv/Nfs2m4mnbPGdShQ9a8n\
+55xzff5pRJFe+qzwlwv0oDfCp4nud5nud5nud5nud5nucf49Nlz6SK7Udtl+PUJPk8GdboLUurbHS\
+jVC++kTsX5+ob2n2/uSe6fSvAeGdV2uWMtWslyb/8RNRWlCKsmdT/qTzP8zzP8/xv9enYMqnCpzBU\
+4KAlP+Q1DBV4WzOp5r21ZFPv722e53me53me53me53me5/mH+SXlUtnPcehztJok+5NLSYYT4pYq7\
+XopCeQe5s7FufqGdt9v7oluL7hwVzVdW+VYu2SSrJRH0FacP08pl/q/fuB5nud5fjz/+aCAr1LRr0\
+cYynisk7xnyGUPQ8Xfdppzqf/3Js/zPM/zPM/zPM/zPM/zfLd+zqaSP5YwlPFY49wk+TwZz39betR\
+8L8V8XHfuXJyrb2j3/eYGdNfShNvxzrFd9rgrJ8l75cf0YT+GipP+dcmlAS5aeJ7neZ7/7X7NpuJp\
+y3xkUsX2o7bLU6122f57bnsYKja7rLk0wNuT53me53me53me53me53n+NX26zplU9mvQVmw5aEnyz\
+WTznLWpNGllL/V4XHfuXJyrb2j3/eYGdK1T5Ka9tGvsakdOkj3Lj2dRfJX6v1jheZ7neb7B3zkBap\
+rD8NDTlifIO8Y105RJFX+kdcul/t9kPM/zPM/zPM/zPM/zPM/zr+rnay6V/RaHLofKSbJH2TpXbUq\
+lbfZSVce9jDsX5+ob2n2/uTdy7TvjtbUAeLSDDknWyT1oK7a5XzNpgCsknud5nh/Rr0cuFf3lCEOf\
+pyp3yC0MFfjjMQNfpZq/833PG3v6+4zneZ7neZ7neZ7neZ7nef5V/XrNpfId9ikMZTzYODtJ9idT8\
+8S2paew91ISx72MOxfn6hvafb+5N3Kl/WK0K07Fr0N0deAgyY7lcg1DxWXNMudS/5dlPM/zPN/k12\
+wqHraXPZP6PGG441RjCUPFZo89k0Z4q/A8z/M8z/M8z/M8z/M8z/Nf+zuH2tc1k8p+CdqKLQctSb6\
+bXAoyqhXbW+EoxXDcy7hzca6+od33m+OKbi59DSLc9y9zqxzsGEeSj5Z7CkPNpdSUTf1fCvI8z/Nv\
+6dOcS+XD7jUMfR7tty0MFa/W5zO3vkr9/7V5nud5nud5nud5nud5nuf5x/hpyqXysHcKQwUOWpIk6\
+2TaS5VXUbFXaYu9FKVxb+/Oxbn6hnbfb457mEvTXpDx0cYcuyT5a3nHNwDnI5NqLuGWbOr+EpLneZ\
+5/jr/z6VPbEoZHHnAvQVuxzemSSTUv2J5L/f/BeZ7neZ7neZ7neZ7neZ7n+cf4+ZpL5VvNWxjKeKy\
+76iTZoVxba67WUuFUL8VhHNfozsW5+oZ232+Oe5i7Flz49YyjeUrdsQ6pJPlwuQdtxTa3PZMGuObk\
+eZ7nG/29D5haMqli+1FbseUwVODLlkk1L5vvpvA8z/M8z/M8z/M8z/M8z/Nf+HXLpaK/LmEo47Hub\
+ZNkj7K14jXNS6McpSaM4xrduThX39Du+81x3bm1eR7ctXSI6utQTJIdy0sYKi4Up5RL/V/o8jzPv6\
+tPcy6VDx7XMJTxmsJQc+SZcqn/V57neZ7neZ7neZ7neZ7neZ7v1M/ZVBw5T1MmVfigJUny0TIdpeK\
+lsL42NcJRyro4rtGdi3P1De2+3xzXnWs9zqS59NWR9i+d9HQIJ8me5TKFoeLq9HOywa/SAFfXPM/z\
+T/LrnktFf53CUIEvYajo+bLkUv+vPM/zPM/zPM/zPM/zPM/zPN+pv+/RY2ldM6nsL0FbseWgJUmyU\
+q6t5UqXUeqqOG4Qdy7O1Te0+35z3Mu4NBdgeCydSpvs6shPki8plyMMFZfDy5xLA1zO8zzPt/l0OT\
+Kpwn986eGrVNH/Owt5n/368TzP8zzP8zzP8zzP8zzP8736NZuK49/bnkllvwVtxZaDliTJWlmaES+\
+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\
+9+eFjjTqSJEmSJNmVbH+q5ha0Fb2dwvBofFc50yUMFTiF4cG/8xG0ZbkGbZ/vZJIkSZIkyReXa+vj\
+idPSPANhKxxl7JjjOI7jOK4Ddy7O1Te0+35zHMdxHMdxX7SttYp789yKdzwJmyRJkiRJkiRJkiRJk\
+iTJnCwNE0YyXVuf/LuujXCUEVSO4ziO47g3dOfiXH1Du+83x3Ecx3Ec14FLrY/rSEUZjovO7SOqpe\
+HNvsZ/SZIkSZIkSZIkSZIkyX5k6au5kUxHaZvRCNrWWqtX+jJwL2OLHMdxHMdx3MPduThX39Du+81\
+xHMdxHMe9oUvNTziZS5sMx33nvVWqRSRJkiRJkiRJkiRJkvzpsr1GrzTKE40sXVuL+8zDx3Ecx3Ec\
+xz3JnYtz9Q3tvt8cx3Ecx3Ec93BXrCSM4D3zITY/3fnSLsca+SdJkiRJkiRJkiRJsgO5lp5YG8l0t\
+E5nt7U+JLfVjTKGxXEcx3Ecx3F/cefiXH1Du+83x3Ecx3Ecx72ca34Wc/ERNOGw/dQ+/WHrl/EHu7\
+FBkiRJkiRJkiRJkn3LtTQOEcm0tZbkXVqHPjzSluM4juM4juMe4s7FufqGdt9vjuM4juM4juPudK3\
+PxdmaH8WzNU+TuJrskCRJkiRJkiRJkvwOWXqmayjveKhA6wX60rzJRjfKiAfHcRzHcRzHvYk7F+fq\
+G9p9vzmO4ziO4ziOexPXfu9kOgoyul+Tjua5Ddfme0SD3QsjSZIkSZIkSZKske11dM0PmS1uM7qK3\
+EoXkRE0ox3HcRzHcRzHcd/ozsW5+oZ232+O4ziO4ziO47iHuNZnLi+td5TKczqEd7GO5qc1r82zLr\
+bfrRvsriRJkiRJkiRJ9iebz+PnrSDD65XiXO+RvJZ+zXCTrddWo1x0chzHcRzHcRzHNbhzca6+od3\
+3m+M4juM4juM47q1dazFiap2l4ij1NLqfmLbmWsS5fXbF1vk/RrvLS5IkSZIk+e6y+TsoS/t3bUrn\
+muG5+NI69dul9Sy+tbRvlMsijuM4juM4juO4F3bn4lx9Q7vvN8dxHMdxHMdxHDeAa53oI7XC4uOSw\
+y1OrROhpGtz+eHcfBt6Ld0Sjm99t8uxbvGTJEmS5Oiyfcrk0plbXOjW3NvimVR4Dra2nmdeW2HzJH\
+YmlOM4juM4juM4juMe7M7FufqGdt9vjuM4juM4juM4jhvWtT6RrFj6F8HtCY+J3pqnSZyaqwjm9kd\
+Tl+7px9USzZWcHmpNkuTAsvlBoGtplrFYlo66oWw/lu2tR4dUrLmPjrxH6yF7bf7+RGtXWzc4yuka\
+x3Ecx3Ecx3Ecxz3YnYtz9Q3tvt8cx3Ecx3Ecx3Ecx72Ya64baJ1Hp/nZdlvrr7g3T0/UPCtlWpu3u\
+TVPS7m3FjOWn1QYl+U0lx+l5m0uzUWbS3Oh6GCy9FF5wF9lap1mNB3tE7E2l0YXp0kL5dxaAN78ON\
+Dmuc6a69fm5sK3RjfK0ZLjOI7jOI7jOI7juKHcnxd/9+fVf/ir//tf/u0f/+Ff/vj//PW//Psf/+G\
+Pf9r/6g+/P//TH/7qv/2Pf//jX/35H/3bP//g3/zHP/3x3MIf/rd//ad//dP/9f/+/X//y///q7/5\
+3//bf6r/8qN//c9//w9//Js//tu//tN//Ps//uu/nCv//CO/+1WHj+0vze/Pfn31r/zPrv3pn/749\
+//fP/7LP5xr/v1P//HH//mTv/+7/x/21Zcp", {"ExpressionJSON", "ZLIB"}]]|>|>, 
+   "Path" -> 
+    "C:\\Users\\Kirill\\Projects\\WebSocketLink\\BinanceTradingChart.wln", 
+   "PublicFields" -> {"Properties"}, "Symbols" -> <||>, 
+   "TOC" -> {CoffeeLiqueur`Extensions`TOC`Private`heading[1, 
+      "Dynamic candlestick chart from WAEX", 
+      CoffeeLiqueur`Notebook`Cells`CellObj[
+       CoffeeLiqueur`Notebook`Cells`CellObj`$35]], 
+     CoffeeLiqueur`Extensions`TOC`Private`heading[2, 
+      "Hard dev initialization", CoffeeLiqueur`Notebook`Cells`CellObj[
+       CoffeeLiqueur`Notebook`Cells`CellObj`$38]], 
+     CoffeeLiqueur`Extensions`TOC`Private`heading[1, "Binance WebSockets", 
+      CoffeeLiqueur`Notebook`Cells`CellObj[
+       CoffeeLiqueur`Notebook`Cells`CellObj`$43]], 
+     CoffeeLiqueur`Extensions`TOC`Private`heading[2, "Create Connection", 
+      CoffeeLiqueur`Notebook`Cells`CellObj[
+       CoffeeLiqueur`Notebook`Cells`CellObj`$47]], 
+     CoffeeLiqueur`Extensions`TOC`Private`heading[1, "WAEX CCDB", 
+      CoffeeLiqueur`Notebook`Cells`CellObj[
+       CoffeeLiqueur`Notebook`Cells`CellObj`$66]], 
+     CoffeeLiqueur`Extensions`TOC`Private`heading[2, "Create connection", 
+      CoffeeLiqueur`Notebook`Cells`CellObj[
+       CoffeeLiqueur`Notebook`Cells`CellObj`$69]], 
+     CoffeeLiqueur`Extensions`TOC`Private`heading[2, 
+      "Event handler that can update the chart", 
+      CoffeeLiqueur`Notebook`Cells`CellObj[
+       CoffeeLiqueur`Notebook`Cells`CellObj`$74]], 
+     CoffeeLiqueur`Extensions`TOC`Private`heading[2, 
+      "Subscribe to candlestick events", CoffeeLiqueur`Notebook`Cells`CellObj[
+       CoffeeLiqueur`Notebook`Cells`CellObj`$79]], 
+     CoffeeLiqueur`Extensions`TOC`Private`heading[2, 
+      "Init data. **WAIT WHEN FIRST DATA WILL BE RECEIVED!**", 
+      CoffeeLiqueur`Notebook`Cells`CellObj[
+       CoffeeLiqueur`Notebook`Cells`CellObj`$84]], 
+     CoffeeLiqueur`Extensions`TOC`Private`heading[2, "Dynamic chart", 
+      CoffeeLiqueur`Notebook`Cells`CellObj[
+       CoffeeLiqueur`Notebook`Cells`CellObj`$88]]}|>, 
+ "Cells" -> {<|"Data" -> ".md\n# Dynamic candlestick chart from WAEX", 
+    "Display" -> "codemirror", "Hash" -> 
+     "fd59ae97-8b85-486a-8954-3aee0fee33fb", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <|"Hidden" -> True|>, 
+    "PublicFields" -> {"Properties"}, "State" -> "Idle", "Type" -> "Input", 
+    "UID" -> Null, "Notebook" -> "fa3c5047-1c5c-40ef-99c4-3bcb7773e844"|>, 
+   <|"Data" -> "# Dynamic candlestick chart from WAEX", 
+    "Display" -> "markdown", "Hash" -> 
+     "a2ae3676-1530-46e5-8d52-97e419d57abd", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <||>, "PublicFields" -> {"Properties"}, 
+    "State" -> "Idle", "Type" -> "Output", "UID" -> Null, 
+    "Notebook" -> "fa3c5047-1c5c-40ef-99c4-3bcb7773e844"|>, 
+   <|"Data" -> ".md\n## Hard dev initialization", "Display" -> "codemirror", 
+    "Hash" -> "14aa8b2a-67c8-43ff-aa1e-cca4c008c168", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <|"Hidden" -> True|>, 
+    "PublicFields" -> {"Properties"}, "State" -> "Idle", "Type" -> "Input", 
+    "UID" -> Null, "Notebook" -> "fa3c5047-1c5c-40ef-99c4-3bcb7773e844"|>, 
+   <|"Data" -> "## Hard dev initialization", "Display" -> "markdown", 
+    "Hash" -> "a9c23c26-6e4d-4a13-a813-93687a0e54ff", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <||>, "PublicFields" -> {"Properties"}, 
+    "State" -> "Idle", "Type" -> "Output", "UID" -> Null, 
+    "Notebook" -> "fa3c5047-1c5c-40ef-99c4-3bcb7773e844"|>, 
+   <|"Data" -> "PacletDirectoryLoad[FileNameJoin[{$HomeDirectory, \
+\"Projects\", \
+\"Objects\"}]];\nPacletDirectoryLoad[FileNameJoin[{$HomeDirectory, \
+\"Projects\", \
+\"WAEXLink\"}]];\nPacletDirectoryLoad[FileNameJoin[{$HomeDirectory, \
+\"Projects\", \
+\"CSockets\"}]];\nPacletDirectoryLoad[FileNameJoin[{$HomeDirectory, \
+\"Projects\", \"LTP\"}]];\nPacletDirectoryLoad[FileNameJoin[{$HomeDirectory, \
+\"Projects\", \
+\"WebSocketLink\"}]];\nPacletDirectoryLoad[FileNameJoin[{$HomeDirectory, \
+\"Projects\", \"SocketIOLink\"}]];", "Display" -> "codemirror", 
+    "Hash" -> "8b7ed17c-7ab8-4317-8603-d36ca0dbc491", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <|"Fade" -> True|>, 
+    "PublicFields" -> {"Properties"}, "State" -> "Idle", "Type" -> "Input", 
+    "UID" -> Null, "Notebook" -> "fa3c5047-1c5c-40ef-99c4-3bcb7773e844"|>, 
+   <|"Data" -> "Block[{$ContextPath}, \n  Get[FileNameJoin[{$HomeDirectory, \
+\"Projects\", \"CSockets\", \"Kernel\", \"TCP.wl\"}]];\n  \
+Get[FileNameJoin[{$HomeDirectory, \"Projects\", \"CSockets\", \"Kernel\", \
+\"Handler.wl\"}]];\n  Get[FileNameJoin[{$HomeDirectory, \"Projects\", \
+\"LTP\", \"Kernel\", \"LTP.wl\"}]];\n  Get[FileNameJoin[{$HomeDirectory, \
+\"Projects\", \"WebSocketLink\", \"Kernel\", \"WebSocketLink.wl\"}]];\n  \
+Get[FileNameJoin[{$HomeDirectory, \"Projects\", \"SocketIOLink\", \"Kernel\", \
+\"SocketIOLink.wl\"}]];\n  Get[FileNameJoin[{$HomeDirectory, \"Projects\", \
+\"WAEXLink\", \"Kernel\", \"RealTime.wl\"}]];\n];", 
+    "Display" -> "codemirror", "Hash" -> 
+     "1bb5a9fd-82a5-4554-a492-7bdb3aefec6f", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <|"Fade" -> True|>, 
+    "PublicFields" -> {"Properties"}, "State" -> "Idle", "Type" -> "Input", 
+    "UID" -> Null, "Notebook" -> "fa3c5047-1c5c-40ef-99c4-3bcb7773e844"|>, 
+   <|"Data" -> ".md\n# Binance WebSockets", "Display" -> "codemirror", 
+    "Hash" -> "2fcd408b-1c0c-402f-a8e8-43a2184ad8f0", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <|"Hidden" -> True|>, 
+    "PublicFields" -> {"Properties"}, "State" -> "Idle", "Type" -> "Input", 
+    "UID" -> Null, "Notebook" -> "fa3c5047-1c5c-40ef-99c4-3bcb7773e844"|>, 
+   <|"Data" -> "# Binance WebSockets", "Display" -> "markdown", 
+    "Hash" -> "a58a784b-7ca6-46bd-b66c-87a35fe04adf", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <||>, "PublicFields" -> {"Properties"}, 
+    "State" -> "Idle", "Type" -> "Output", "UID" -> Null, 
+    "Notebook" -> "fa3c5047-1c5c-40ef-99c4-3bcb7773e844"|>, 
+   <|"Data" -> ".md\n## Create Connection", "Display" -> "codemirror", 
+    "Hash" -> "5892621d-9514-4699-933e-a85c266d9070", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <|"Hidden" -> True|>, 
+    "PublicFields" -> {"Properties"}, "State" -> "Idle", "Type" -> "Input", 
+    "UID" -> Null, "Notebook" -> "fa3c5047-1c5c-40ef-99c4-3bcb7773e844"|>, 
+   <|"Data" -> "## Create Connection", "Display" -> "markdown", 
+    "Hash" -> "bad55fba-3a1e-4705-9a96-e63f13686e57", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <||>, "PublicFields" -> {"Properties"}, 
+    "State" -> "Idle", "Type" -> "Output", "UID" -> Null, 
+    "Notebook" -> "fa3c5047-1c5c-40ef-99c4-3bcb7773e844"|>, 
+   <|"Data" -> "Once[binanceConnection = \
+KirillBelov`WebSocketLink`WebSocketConnect[\"wss://stream.binance.com:9443/ws\
+/btcusdt@miniTicker\"]];", "Display" -> "codemirror", 
+    "Hash" -> "aa4c355a-3433-4e5e-a736-77a37d013f1d", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <||>, "PublicFields" -> {"Properties"}, 
+    "State" -> "Idle", "Type" -> "Input", "UID" -> Null, 
+    "Notebook" -> "fa3c5047-1c5c-40ef-99c4-3bcb7773e844"|>, 
+   <|"Data" -> "binanceConnection[\"EventHandlers\"] = \
+KeyDrop[binanceConnection[\"EventHandlers\"], \"Echo\"]; ", 
+    "Display" -> "codemirror", "Hash" -> 
+     "1a103fbb-9d29-4ad5-b07e-ec7654db3d15", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <||>, "PublicFields" -> {"Properties"}, 
+    "State" -> "Idle", "Type" -> "Input", "UID" -> Null, 
+    "Notebook" -> "fa3c5047-1c5c-40ef-99c4-3bcb7773e844"|>, 
+   <|"Data" -> "Length @ binanceConnection[\"Data\"]", 
+    "Display" -> "codemirror", "Hash" -> 
+     "67121dd7-4e8b-40eb-9dfa-98899aaee1b1", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <||>, "PublicFields" -> {"Properties"}, 
+    "State" -> "Idle", "Type" -> "Input", "UID" -> Null, 
+    "Notebook" -> "fa3c5047-1c5c-40ef-99c4-3bcb7773e844"|>, 
+   <|"Data" -> "21", "Display" -> "codemirror", 
+    "Hash" -> "0074f8f9-4199-4f9a-ba20-0c36735a6c8f", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <||>, "PublicFields" -> {"Properties"}, 
+    "State" -> "Idle", "Type" -> "Output", "UID" -> Null, 
+    "Notebook" -> "fa3c5047-1c5c-40ef-99c4-3bcb7773e844"|>, 
+   <|"Data" -> "binanceConnection[\"EventHandlers\", \"UpdatePrice\"] = \
+Function[{conn, msg}, \n  With[{chart = conn[\"PriceChart\"]}, \n    \
+PlotlyExtendTraces[chart, <|\n      \"x\" -> \
+{{DateString[FromUnixTime[msg[\"E\"]/1000], \"ISODateTime\"]}}, \n      \"y\" \
+-> {{ToExpression[msg[\"c\"]]}}\n    |>, {0}]; \n  ]\n]; \
+\n\nbinanceInitPriceData = \n  Normal @ \n  Transpose @ \n  Dataset @ \n  \
+Query[All, <|\n    \"x\" -> \"E\" /* \
+Function[DateString[FromUnixTime[#/1000], \"ISODateTime\"]], \n    \"y\" -> \
+\"c\" /* ToExpression\n  |>] @ \n  \
+binanceConnection[\"Data\"];\n\nbinanceConnection[\"PriceChart\"] = \
+Plotly[<|\n  \"type\" -> \"line\"\n|> ~ Join ~ binanceInitPriceData, <|\n  \
+\"width\" -> 1000, \n  \"height\" -> 600, \n  \"paper_bgcolor\" -> \"rgba(0, \
+0, 0, 0)\", \n  \"plot_bgcolor\" -> \"rgba(0, 0, 0, 0)\", \n  \"margin\" -> \
+\"autoexpand\"\n|>]", "Display" -> "codemirror", 
+    "Hash" -> "cb2f20c2-6192-4d93-b42a-9b3398998da7", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <||>, "PublicFields" -> {"Properties"}, 
+    "State" -> "Evaluation", "Type" -> "Input", "UID" -> Null, 
+    "Notebook" -> "fa3c5047-1c5c-40ef-99c4-3bcb7773e844"|>, 
+   <|"Data" -> "binanceConnection[\"Data\"] // Length", 
+    "Display" -> "codemirror", "Hash" -> 
+     "97834435-6309-4252-b532-42b3c8ec6448", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <||>, "PublicFields" -> {"Properties"}, 
+    "State" -> "Idle", "Type" -> "Input", "UID" -> Null, 
+    "Notebook" -> "fa3c5047-1c5c-40ef-99c4-3bcb7773e844"|>, 
+   <|"Data" -> "2849", "Display" -> "codemirror", 
+    "Hash" -> "4f463876-4d80-4cf4-9972-508cd751edb6", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <||>, "PublicFields" -> {"Properties"}, 
+    "State" -> "Idle", "Type" -> "Output", "UID" -> Null, 
+    "Notebook" -> "fa3c5047-1c5c-40ef-99c4-3bcb7773e844"|>, 
+   <|"Data" -> ".md\n# WAEX CCDB", "Display" -> "codemirror", 
+    "Hash" -> "6f72618b-a614-4a82-9f84-a955213e7800", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <|"Hidden" -> True|>, 
+    "PublicFields" -> {"Properties"}, "State" -> "Idle", "Type" -> "Input", 
+    "UID" -> Null, "Notebook" -> "fa3c5047-1c5c-40ef-99c4-3bcb7773e844"|>, 
+   <|"Data" -> "# WAEX CCDB", "Display" -> "markdown", 
+    "Hash" -> "670e2498-ec2a-4346-a3d5-941793a4d921", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <||>, "PublicFields" -> {"Properties"}, 
+    "State" -> "Idle", "Type" -> "Output", "UID" -> Null, 
+    "Notebook" -> "fa3c5047-1c5c-40ef-99c4-3bcb7773e844"|>, 
+   <|"Data" -> ".md\n## Create connection", "Display" -> "codemirror", 
+    "Hash" -> "0997aec2-741a-4864-b7c2-859084682b02", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <|"Hidden" -> True|>, 
+    "PublicFields" -> {"Properties"}, "State" -> "Idle", "Type" -> "Input", 
+    "UID" -> Null, "Notebook" -> "fa3c5047-1c5c-40ef-99c4-3bcb7773e844"|>, 
+   <|"Data" -> "## Create connection", "Display" -> "markdown", 
+    "Hash" -> "68ff1806-0402-48b2-b138-a26a10278089", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <||>, "PublicFields" -> {"Properties"}, 
+    "State" -> "Idle", "Type" -> "Output", "UID" -> Null, 
+    "Notebook" -> "fa3c5047-1c5c-40ef-99c4-3bcb7773e844"|>, 
+   <|"Data" -> "Once[connection = \
+KirillBelov`WAEXLink`RealTime`WAEXConnect[\n\t\"kirillbelovtest@gmail.com\", \
+\n\t\"Wolfr4mCCDBK1r1!\", \n\t\"MessageHandler\" -> eventHandler\n]]; ", 
+    "Display" -> "codemirror", "Hash" -> 
+     "b4628efd-0175-4f7b-925b-25170a87dc9c", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <||>, "PublicFields" -> {"Properties"}, 
+    "State" -> "Idle", "Type" -> "Input", "UID" -> Null, 
+    "Notebook" -> "fa3c5047-1c5c-40ef-99c4-3bcb7773e844"|>, 
+   <|"Data" -> ".md\n## Event handler that can update the chart", 
+    "Display" -> "codemirror", "Hash" -> 
+     "56d89335-3047-4869-b1ca-d41e48e318ae", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <|"Hidden" -> True|>, 
+    "PublicFields" -> {"Properties"}, "State" -> "Idle", "Type" -> "Input", 
+    "UID" -> Null, "Notebook" -> "fa3c5047-1c5c-40ef-99c4-3bcb7773e844"|>, 
+   <|"Data" -> "## Event handler that can update the chart", 
+    "Display" -> "markdown", "Hash" -> 
+     "53f64f57-30cd-4a0f-9f50-d504d6e4a1c2", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <||>, "PublicFields" -> {"Properties"}, 
+    "State" -> "Idle", "Type" -> "Output", "UID" -> Null, 
+    "Notebook" -> "fa3c5047-1c5c-40ef-99c4-3bcb7773e844"|>, 
+   <|"Data" -> "eventHandler = Function[event, \n  Module[{newData}, \n    \
+Print[$event = event]; \n    newData = \n    Map[List] @ \n    Normal @ \n    \
+Transpose @ \n    Dataset @ \n    Query[All, <|\n      \"x\" -> 1 /* \
+(#/1000&) /* FromUnixTime /* (DateString[#, \"ISODateTime\"]&), \n      \
+\"open\" -> 2, \"high\" -> 3, \"low\" -> 4, \"close\" -> 5\n    |>] @ \
+event[[\"data\", 2, \"payload\", \"charts\"]]; \n  ]; \n  $newData = newData; \
+\n  PlotlyExtendTraces[candlestickChart, newData, {0}]; \n]; ", 
+    "Display" -> "codemirror", "Hash" -> 
+     "76a3542b-9a1b-4946-b0b5-f1b7a8d9edcd", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <||>, "PublicFields" -> {"Properties"}, 
+    "State" -> "Idle", "Type" -> "Input", "UID" -> Null, 
+    "Notebook" -> "fa3c5047-1c5c-40ef-99c4-3bcb7773e844"|>, 
+   <|"Data" -> ".md\n## Subscribe to candlestick events", 
+    "Display" -> "codemirror", "Hash" -> 
+     "92b05241-3be4-4d56-ba35-159eacc76507", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <|"Hidden" -> True|>, 
+    "PublicFields" -> {"Properties"}, "State" -> "Idle", "Type" -> "Input", 
+    "UID" -> Null, "Notebook" -> "fa3c5047-1c5c-40ef-99c4-3bcb7773e844"|>, 
+   <|"Data" -> "## Subscribe to candlestick events", "Display" -> "markdown", 
+    "Hash" -> "1dd5c3b0-6b5b-44a6-93a5-873b55465cb3", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <||>, "PublicFields" -> {"Properties"}, 
+    "State" -> "Idle", "Type" -> "Output", "UID" -> Null, 
+    "Notebook" -> "fa3c5047-1c5c-40ef-99c4-3bcb7773e844"|>, 
+   <|"Data" -> "Once[KirillBelov`WAEXLink`RealTime`WAEXSubscribeToPricing[con\
+nection, \"CandleStick\", 1]];", "Display" -> "codemirror", 
+    "Hash" -> "05381a9f-0ac5-4c54-b411-b862cbaf92b1", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <||>, "PublicFields" -> {"Properties"}, 
+    "State" -> "Idle", "Type" -> "Input", "UID" -> Null, 
+    "Notebook" -> "fa3c5047-1c5c-40ef-99c4-3bcb7773e844"|>, 
+   <|"Data" -> ".md\n## Init data. **WAIT WHEN FIRST DATA WILL BE \
+RECEIVED!**", "Display" -> "codemirror", 
+    "Hash" -> "696fcba7-e55c-46d0-9d27-d49403c098b8", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <|"Hidden" -> True|>, 
+    "PublicFields" -> {"Properties"}, "State" -> "Idle", "Type" -> "Input", 
+    "UID" -> Null, "Notebook" -> "fa3c5047-1c5c-40ef-99c4-3bcb7773e844"|>, 
+   <|"Data" -> "## Init data. **WAIT WHEN FIRST DATA WILL BE RECEIVED!**", 
+    "Display" -> "markdown", "Hash" -> 
+     "21d77429-6dbb-41ab-880d-dd946a173e95", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <||>, "PublicFields" -> {"Properties"}, 
+    "State" -> "Idle", "Type" -> "Output", "UID" -> Null, 
+    "Notebook" -> "fa3c5047-1c5c-40ef-99c4-3bcb7773e844"|>, 
+   <|"Data" -> "initData = \nNormal @ \nTranspose @ \nDataset @ \nFlatten @ \
+\nDeleteDuplicates @ \nQuery[All, \"data\", 2, \"payload\", \"charts\", All, \
+<|\n  \"x\" -> 1 /* (#/1000&) /* FromUnixTime /* (DateString[#, \
+\"ISODateTime\"]&), \n  \"open\" -> 2, \"high\" -> 3, \"low\" -> 4, \"close\" \
+-> 5\n|>] @ \nQuery[Select[#data[[1]] == \"Pricing_CandleStick_1\"&]] @ \
+connection[\"Data\"]; ", "Display" -> "codemirror", 
+    "Hash" -> "602fab6b-0c49-46ac-8ad1-031b54a81fb3", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <||>, "PublicFields" -> {"Properties"}, 
+    "State" -> "Idle", "Type" -> "Input", "UID" -> Null, 
+    "Notebook" -> "fa3c5047-1c5c-40ef-99c4-3bcb7773e844"|>, 
+   <|"Data" -> ".md\n## Dynamic chart", "Display" -> "codemirror", 
+    "Hash" -> "8b3dceed-037c-4aae-a051-ebb2714619ca", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <|"Hidden" -> True|>, 
+    "PublicFields" -> {"Properties"}, "State" -> "Idle", "Type" -> "Input", 
+    "UID" -> Null, "Notebook" -> "fa3c5047-1c5c-40ef-99c4-3bcb7773e844"|>, 
+   <|"Data" -> "## Dynamic chart", "Display" -> "markdown", 
+    "Hash" -> "16655a9f-6309-4a8e-a942-fdd769bbee9c", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <||>, "PublicFields" -> {"Properties"}, 
+    "State" -> "Idle", "Type" -> "Output", "UID" -> Null, 
+    "Notebook" -> "fa3c5047-1c5c-40ef-99c4-3bcb7773e844"|>, 
+   <|"Data" -> "Length@connection@\"Data\"", "Display" -> "codemirror", 
+    "Hash" -> "6a9320d9-5f6d-4ac1-aec4-a677201549ab", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <||>, "PublicFields" -> {"Properties"}, 
+    "State" -> "Idle", "Type" -> "Input", "UID" -> Null, 
+    "Notebook" -> "fa3c5047-1c5c-40ef-99c4-3bcb7773e844"|>, 
+   <|"Data" -> "15", "Display" -> "codemirror", 
+    "Hash" -> "e6543d20-5bbb-4076-8595-5b1620fcb59d", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <||>, "PublicFields" -> {"Properties"}, 
+    "State" -> "Idle", "Type" -> "Output", "UID" -> Null, 
+    "Notebook" -> "fa3c5047-1c5c-40ef-99c4-3bcb7773e844"|>, 
+   <|"Data" -> "candlestickChart = Plotly[<|\n  \"type\" -> \
+\"candlestick\"\n|> ~ Join ~ initData, <|\n  \"width\" -> 1000, \n  \
+\"height\" -> 600, \n  \"paper_bgcolor\" -> \"rgba(0, 0, 0, 0)\", \n  \
+\"plot_bgcolor\" -> \"rgba(0, 0, 0, 0)\", \n  \"margin\" -> \
+\"autoexpand\"\n|>]", "Display" -> "codemirror", 
+    "Hash" -> "55745009-d535-4211-8dcd-9c4f3cacbd51", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <||>, "PublicFields" -> {"Properties"}, 
+    "State" -> "Idle", "Type" -> "Input", "UID" -> Null, 
+    "Notebook" -> "fa3c5047-1c5c-40ef-99c4-3bcb7773e844"|>, 
+   <|"Data" -> "(*VB[*)(FrontEndRef[\"b558487b-b096-4eb6-bbfe-a524ebaa5a34\"]\
+)(*,*)(*\"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJ5maW\
+phYmCfpJhlYmumapCaZ6SYlpaXqJpoaATmJiaaJxiYAiFoWLw==\"*)(*]VB*)", 
+    "Display" -> "codemirror", "Hash" -> 
+     "36df016e-a6e1-4f30-bab5-87d40afe9d14", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <||>, "PublicFields" -> {"Properties"}, 
+    "State" -> "Idle", "Type" -> "Output", "UID" -> Null, 
+    "Notebook" -> "fa3c5047-1c5c-40ef-99c4-3bcb7773e844"|>, 
+   <|"Data" -> "$event", "Display" -> "codemirror", 
+    "Hash" -> "f015176b-b8c2-4ba4-9009-f3d15022a230", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <||>, "PublicFields" -> {"Properties"}, 
+    "State" -> "Idle", "Type" -> "Input", "UID" -> Null, 
+    "Notebook" -> "fa3c5047-1c5c-40ef-99c4-3bcb7773e844"|>, 
+   <|"Data" -> "<|\"data\"->{\"Pricing_CandleStick_1\",<|\"symbol\"->\"BTC/US\
+D\",\"payload\"-><|\"charts\"->{{1747829460000,106400,106410,106400,106410,0.\
+038`},{1747829520000,106410,106430,106410,106430,0.52731361`},{1747829580000,\
+106440,106440,106440,106440,0.43285052`},{1747829640000,106450,106510,106450,\
+106510,0.05114852`},{1747829700000,106500,106530,106480,106530,0.74160991`},{\
+1747829760000,106540,106580,106540,106570,0.44937708`},{1747829820000,106570,\
+106600,106570,106590,0.63225437`},{1747829880000,106600,106670,106600,106670,\
+0.92629554`},{1747829940000,106660,106680,106660,106680,0.26985674000000004`}\
+,{1747830000000,106660,106670,106660,106670,0.43782978`},{1747830060000,10668\
+0,106690,106680,106680,0.68369834`},{1747830120000,106680,106680,106650,10668\
+0,1.11395247`}},\"intervalEnd\"->1747830180000,\"intervalStart\"->17478294600\
+00,\"marketId\"->1|>,\"exchange\"->\"bitfinex\",\"type\"->\"CandleStick\",\"c\
+ollectorTraceId\"->\"5fd316ee\"|>,\"PRopI-w\"},\"name\"->\"*\",\"type\"->\"ev\
+ent\",\"connection\"->KirillBelov`SocketIOLink`SocketIOConnection[(*VB[*) \
+KirillBelov`SocketIOLink`SocketIOConnection`$17 \
+(*,*)(*\"1:eJydUl1LwzAUnZ+oCIIvgk8K9rFl67p1823TDYeFQat7Nk1uNSxNRpLu4997swruwR\
+cH4ZBzzuVyTsh9rtLiqNFomFuEoVqPlS4/BloT+Qksq8qS6A3KxYGbuUIYayXtSLIZ17Yiojaud4z\
+RGmhlSS4ge0A5AtKPIWd+RHstPyKd3O9Du+vTTq9VxLTT7Ld7xaFbcoyQcGP/Yjc76X5STSyUMw6r\
+7BS9DETxeFfPXiCMGLdKO7sO6La9KMFqdo7wnibPQBWDLEb2yjUXYghCLb1uM1N0DnYyTbic79AnJ\
+SVQy5VE0QujVvwbNa2w75m7AGFTKTZb9U1XYC5dvgWR+EBlAsW/+237SLZQXNp9OzaReWH4Ze3CeO\
+2BF47xEErBmIBSlgcrAmsDeslRCqgqcXivcubEfQUiDHwDP16etw==\"*)(*]VB*)]|>", 
+    "Display" -> "codemirror", "Hash" -> 
+     "9cbee145-ab80-41b7-9266-3a28ea9b7aa9", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <||>, "PublicFields" -> {"Properties"}, 
+    "State" -> "Idle", "Type" -> "Output", "UID" -> Null, 
+    "Notebook" -> "fa3c5047-1c5c-40ef-99c4-3bcb7773e844"|>, 
+   <|"Data" -> "$newData", "Display" -> "codemirror", 
+    "Hash" -> "074a061e-0c35-4fdb-be55-411125fbac72", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <||>, "PublicFields" -> {"Properties"}, 
+    "State" -> "Idle", "Type" -> "Input", "UID" -> Null, 
+    "Notebook" -> "fa3c5047-1c5c-40ef-99c4-3bcb7773e844"|>, 
+   <|"Data" -> "newData", "Display" -> "codemirror", 
+    "Hash" -> "71906ef4-8d20-496d-bfb6-78438cd59b15", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <||>, "PublicFields" -> {"Properties"}, 
+    "State" -> "Idle", "Type" -> "Output", "UID" -> Null, 
+    "Notebook" -> "fa3c5047-1c5c-40ef-99c4-3bcb7773e844"|>}, 
+ "serializer" -> "jsfn4"|>
